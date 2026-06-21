@@ -13,19 +13,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --plum:      #110718;
-  --plum-rich: #1c0c28;
-  --plum-mid:  #2a1040;
-  --gold:      #c9a84c;
-  --gold-pale: #e8cc8c;
-  --gold-glow: rgba(201,168,76,0.10);
-  --cream:     #faf6ef;
-  --text:      #d8cab0;
-  --muted:     #8a7a62;
-  --border:    rgba(201,168,76,0.14);
-  --border-mid:rgba(201,168,76,0.28);
-  --green:     #3a7a4a;
-  --green-bg:  rgba(58,122,74,0.12);
+  --plum:       #110718;
+  --plum-rich:  #1c0c28;
+  --plum-mid:   #2a1040;
+  --gold:       #c9a84c;
+  --gold-pale:  #e8cc8c;
+  --gold-glow:  rgba(201,168,76,0.10);
+  --cream:      #faf6ef;
+  --text:       #d8cab0;
+  --muted:      #8a7a62;
+  --border:     rgba(201,168,76,0.14);
+  --border-mid: rgba(201,168,76,0.28);
+  --green:      #3a7a4a;
+  --green-bg:   rgba(58,122,74,0.12);
   --serif: 'Cormorant Garamond', serif;
   --sans:  'Jost', sans-serif;
 }
@@ -48,32 +48,24 @@ body::before {
 }
 .wrap { max-width:680px; margin:0 auto; padding:24px 20px 120px; position:relative; z-index:1; }
 
-/* Header */
-.header { text-align:center; padding:32px 0 24px; border-bottom:1px solid var(--border); margin-bottom:28px; }
-.header-eyebrow {
-  font-family:var(--sans);
-  font-size:0.65rem;
-  letter-spacing:0.28em;
-  text-transform:uppercase;
-  color:var(--gold);
-  display:block;
-  margin-bottom:10px;
-}
-.header-time {
-  font-family:var(--serif);
-  font-size:clamp(1.5rem,5vw,2.2rem);
-  font-weight:400;
-  color:var(--cream);
-  line-height:1.15;
-}
+.header { text-align:center; padding:32px 0 24px; border-bottom:1px solid var(--border); margin-bottom:20px; }
+.header-eyebrow { font-size:0.65rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:10px; }
+.header-time { font-family:var(--serif); font-size:clamp(1.5rem,5vw,2.2rem); font-weight:400; color:var(--cream); line-height:1.15; }
 .header-time em { font-style:italic; color:var(--gold-pale); font-weight:300; }
-.header-greeting {
-  font-size:0.9rem;
+.header-greeting { font-size:0.9rem; color:var(--muted); margin-top:10px; }
+
+.activity-badge {
+  display:inline-block;
+  margin:14px auto 0;
+  font-size:0.72rem;
   color:var(--muted);
-  margin-top:10px;
+  background:rgba(201,168,76,0.06);
+  border:1px solid var(--border);
+  padding:6px 14px;
+  letter-spacing:0.04em;
+  max-width:100%;
 }
 
-/* Sections */
 .section {
   background:var(--plum-rich);
   border:1px solid var(--border);
@@ -87,141 +79,58 @@ body::before {
   top:0; left:0; right:0; height:2px;
   background:linear-gradient(90deg,transparent,var(--gold),transparent);
   opacity:0;
-  transition:opacity 0.3s;
 }
-.section-label {
-  font-family:var(--sans);
-  font-size:0.6rem;
-  letter-spacing:0.24em;
-  text-transform:uppercase;
-  color:var(--gold);
-  margin-bottom:10px;
-}
+.section-label { font-size:0.6rem; letter-spacing:0.24em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
 .section p { font-size:0.92rem; line-height:1.75; color:var(--text); }
 .section ul { list-style:none; margin:8px 0 0; }
 .section ul li {
-  font-size:0.88rem;
-  color:var(--text);
+  font-size:0.88rem; color:var(--text);
   padding:7px 0 7px 18px;
   border-bottom:1px solid rgba(255,255,255,0.04);
-  position:relative;
-  line-height:1.55;
+  position:relative; line-height:1.55;
 }
 .section ul li:last-child { border-bottom:none; }
-.section ul li::before {
-  content:'◆';
-  color:var(--gold);
-  font-size:0.3rem;
-  position:absolute;
-  left:0; top:12px;
-}
-.section pre {
-  font-family:var(--sans);
-  font-size:0.85rem;
-  white-space:pre-wrap;
-  color:var(--text);
-  line-height:1.7;
-}
+.section ul li::before { content:'◆'; color:var(--gold); font-size:0.3rem; position:absolute; left:0; top:12px; }
+.section pre { font-family:var(--sans); font-size:0.85rem; white-space:pre-wrap; color:var(--text); line-height:1.7; }
 
-/* Focus NOW — highlighted */
-.focus-section {
-  background:linear-gradient(135deg,var(--plum-mid),var(--plum-rich));
-  border-color:var(--border-mid);
-}
+.focus-section { background:linear-gradient(135deg,var(--plum-mid),var(--plum-rich)); border-color:var(--border-mid); }
 .focus-section::before { opacity:1; }
 .focus-section .section-label { color:var(--gold-pale); }
-.focus-section p {
-  font-family:var(--serif);
-  font-size:1.1rem;
-  font-style:italic;
-  color:var(--cream);
-  line-height:1.6;
-}
+.focus-section p { font-family:var(--serif); font-size:1.1rem; font-style:italic; color:var(--cream); line-height:1.6; }
 
-/* Wellness */
 .wellness-section { border-color:rgba(58,122,74,0.35); background:var(--green-bg); }
 .wellness-section .section-label { color:#7ec88a; }
 .wellness-section p { color:#b8ddbf; }
 
-/* Encouragement */
-.encourage-section {
-  border:none;
-  background:transparent;
-  text-align:center;
-  padding:16px 10px;
-}
-.encourage-section p {
-  font-family:var(--serif);
-  font-size:1.05rem;
-  font-style:italic;
-  color:var(--gold-pale);
-  opacity:0.8;
-}
+.encourage-section { border:none; background:transparent; text-align:center; padding:16px 10px; }
+.encourage-section p { font-family:var(--serif); font-size:1.05rem; font-style:italic; color:var(--gold-pale); opacity:0.8; }
 
-/* Ideas */
 .ideas-section { border-color:rgba(100,80,180,0.3); background:rgba(80,60,140,0.1); }
 .ideas-section .section-label { color:#b0a0e0; }
 
-/* Log what you did */
-.log-section {
-  background:var(--plum-mid);
-  border:1px solid var(--border-mid);
-  padding:20px 22px;
-  margin-bottom:14px;
-}
+.log-section { background:var(--plum-mid); border:1px solid var(--border-mid); padding:20px 22px; margin-bottom:14px; }
 .log-section .section-label { color:var(--gold-pale); }
 .log-textarea {
-  width:100%;
-  background:rgba(0,0,0,0.3);
-  border:1px solid var(--border);
-  color:var(--cream);
-  font-family:var(--sans);
-  font-size:0.88rem;
-  font-weight:300;
-  line-height:1.6;
-  padding:12px 14px;
-  resize:vertical;
-  min-height:80px;
-  margin-top:10px;
-  outline:none;
-  transition:border-color 0.25s;
+  width:100%; background:rgba(0,0,0,0.3);
+  border:1px solid var(--border); color:var(--cream);
+  font-family:var(--sans); font-size:0.88rem; font-weight:300;
+  line-height:1.6; padding:12px 14px; resize:vertical; min-height:80px;
+  margin-top:10px; outline:none; transition:border-color 0.25s;
 }
 .log-textarea:focus { border-color:var(--gold); }
 .log-textarea::placeholder { color:var(--muted); opacity:0.7; }
 .log-btn {
-  margin-top:10px;
-  width:100%;
-  padding:13px;
+  margin-top:10px; width:100%; padding:13px;
   background:linear-gradient(135deg,var(--gold),#d9b86a);
-  color:var(--plum);
-  font-family:var(--sans);
-  font-size:0.65rem;
-  font-weight:600;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-  border:none;
-  cursor:pointer;
-  transition:filter 0.2s;
+  color:var(--plum); font-family:var(--sans); font-size:0.65rem;
+  font-weight:600; letter-spacing:0.2em; text-transform:uppercase;
+  border:none; cursor:pointer; transition:filter 0.2s;
 }
 .log-btn:hover { filter:brightness(1.08); }
 .log-btn:disabled { opacity:0.5; cursor:not-allowed; filter:none; }
-.log-status {
-  font-size:0.78rem;
-  text-align:center;
-  margin-top:8px;
-  min-height:20px;
-  color:var(--gold-pale);
-}
+.log-status { font-size:0.78rem; text-align:center; margin-top:8px; min-height:20px; color:var(--gold-pale); }
 
-/* Footer */
-.footer {
-  text-align:center;
-  padding-top:16px;
-  font-size:0.65rem;
-  color:var(--muted);
-  opacity:0.5;
-  letter-spacing:0.08em;
-}
+.footer { text-align:center; padding-top:16px; font-size:0.65rem; color:var(--muted); opacity:0.5; letter-spacing:0.08em; }
 
 @media(prefers-reduced-motion:reduce) { * { transition:none !important; } }
 </style>
@@ -229,27 +138,24 @@ body::before {
 <body>
 <div class="wrap">
 
-  <!-- Header -->
   <div class="header">
     <span class="header-eyebrow">✦ Your Focus · Midday</span>
-    <div class="header-time">Sunday, June 21<br><em>01:06 PM</em></div>
-    <p class="header-greeting">Hey Gemma, good afternoon — it's Sunday the 21st, just after 1 PM. Let's get you oriented fast.</p>
+    <div class="header-time">Sunday, June 21<br><em>01:36 PM</em></div>
+    <p class="header-greeting">Hey Gemma! Happy Sunday — you've been busy this morning. Here's your midday snapshot.</p>
+    <div class="activity-badge">🔍 Today's file activity was concentrated in Scripts, focus, daily-briefing, Gemma's Website, and gemma-affirmations — all touched this morning, suggesting active content and website work; vault-tmq and the WinWin HELP outreach folder show earlier-week activity that appears to be wrapping up.</div>
   </div>
 
-  <!-- Where you left off -->
   <div class="section">
     <div class="section-label">📍 Where you left off</div>
-    <p>You wrapped up the WinWin outreach tracker build — a full two-tab app live at winwin.gemmaserenity.com tracking every org and personal contact you and Sascha have reached out to for help (food, pet care, utilities, churches). The app is deployed on Cloudflare Pages, Supabase is seeded, mobile-responsive, favicon uploaded, and everything is live. You also have a hard deadline update: Global Water Resources moved their deadline to July 1st — that's 10 days away.</p>
+    <p>This morning you were deep in Scripts, Gemma's Website, and the focus folder — all touched within the last few hours today (as late as 1:35 PM). The gemma-affirmations project and vault-tmq were also active early this morning. The WinWin outreach tracker (winwin.gemmaserenity.com) was fully deployed back on June 15th and is live — that chapter is closed unless you're adding data.</p>
   </div>
 
-  <!-- Focus NOW -->
   <div class="section focus-section">
     <div class="section-label">⚡ Focus right now — money in bank</div>
-    <p>Email Global Water Resources at customerservice@gwresources.com TODAY. July 1st is 10 days out and this is a utilities lifeline — get that correspondence in writing before the week starts.</p>
-    <ul><li>Email customerservice@gwresources.com now — reference the July 1st deadline, ask for confirmation of your account status and any assistance options</li><li>Log that GWR outreach in your WinWin tracker at winwin.gemmaserenity.com so it's on record</li><li>Review the Strategic Vision Filter task (timesheet.md) — before you start any new build sprint, run the filter so your next session moves money, not just code</li></ul>
+    <p>Your Monday networking call with Eric Twohey is at 11 AM tomorrow — that is your most immediate money-and-empire move. Prep your positioning and a clear ask or offer before you sleep tonight.</p>
+    <ul><li>Prep for Eric Twohey networking call (Mon 11 AM) — write 3 sentences on what you want him to know and one clear next step you want to come out of it</li><li>Global Water Resources deadline is July 1st — confirm your deliverable or next touch is on track before Monday; email is customerservice@gwresources.com</li><li>Review the Scripts folder work from today — you were in it as recently as 1:35 PM, make sure any draft or outline is saved and named clearly so you can pick it up Monday afternoon after your calls</li></ul>
   </div>
 
-  <!-- Calendar -->
   <div class="section">
     <div class="section-label">📅 Calendar — next 48 hours</div>
     <pre>  • Mon Jun 22 · 11:00 AM — networking call Gemma Serenity and Eric Twohey
@@ -257,7 +163,6 @@ body::before {
   • Tue Jun 23 · 11:00 AM — networking call Gemma Serenity and Charlie Sells</pre>
   </div>
 
-  <!-- Prospects -->
   <div class="section">
     <div class="section-label">🤝 Prospects pipeline</div>
     <pre>  • r
@@ -283,46 +188,42 @@ body::before {
   • a</pre>
   </div>
 
-  <!-- Wellness -->
   <div class="section wellness-section">
     <div class="section-label">💧 Body check</div>
-    <p>It's early afternoon on a Sunday — drink a full glass of water right now before you do anything else. If you have meds due today, take them with that water. You have Bryan's ADD medication appointment Monday at 2:30 PM — jot down anything you want to tell him today while it's fresh.</p>
+    <p>Drink a full glass of water right now before you read anything else. Your Bryan Lazaro appointment is tomorrow at 2:30 PM — that's your ADD medication review, so don't reschedule it. Take any afternoon meds if you haven't yet.</p>
   </div>
 
   
-        <div class="section ideas-section">
-          <div class="section-label">💡 New idea — parked for Vision Filter</div>
-          <p>PARKED — PENDING VISION FILTER: 'Strategic Vision Filter' task (timesheet.md, 2026-06-09) — a structured scoring pass on all queued projects against Vision Alignment / Needle Movement / Financial Inflow criteria. This should run BEFORE the next build sprint begins. No new ideas surfaced in today's notes beyond what's already logged.</p>
-        </div>
+      <div class="section ideas-section">
+        <div class="section-label">💡 New idea — parked for Vision Filter</div>
+        <p>Scripts folder was heavily active today (17 files, last touch 1:35 PM) alongside a 'focus' folder — possible new content or product scripting direction emerging. Also 'Next Ideas to be Developed' folder was touched this morning (Jun 21, 8:02 AM) — two files flagged. Both parked for Vision Filter: run them through the vision / needle / money scoring before scheduling any build work.</p>
+      </div>
 
-  <!-- Encouragement -->
   <div class="section encourage-section">
-    <p>"You built a real, deployed, database-backed app from scratch to track your survival network — that's not just scrappy, that's exactly the kind of infrastructure builder who can run a tech empire."</p>
+    <p>"You are building a sovereign ecosystem from scratch — a live outreach tracker, a website, scripts, affirmations, a vault, prospects — and the file activity proves you showed up and worked on a Sunday morning. That is the empire being built in real time."</p>
   </div>
 
-  <!-- Log what you did -->
   <div class="log-section">
     <div class="section-label">✍️ Log what you just did</div>
     <textarea class="log-textarea" id="log-input"
-      placeholder="e.g. Finished the postcall agent draft, sent follow-up to Dave, drank water ✓"></textarea>
+      placeholder="e.g. Finished postcall agent draft, sent follow-up to Dave, drank water ✓"></textarea>
     <button class="log-btn" id="log-btn" onclick="submitLog()">→ Save to session notes</button>
     <div class="log-status" id="log-status"></div>
   </div>
 
-  <div class="footer">Generated 2026-06-21 13:06 · focus.gemmaserenity.com · auto-updates 3×/day</div>
+  <div class="footer">Generated 2026-06-21 13:36 · scanning since Jun 14 · 01:35 PM · focus.gemmaserenity.com</div>
 </div>
 
 <script>
-// Register service worker for PWA
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js').catch(function(){});
 }
 
 async function submitLog() {
-  const input = document.getElementById('log-input');
-  const btn   = document.getElementById('log-btn');
+  const input  = document.getElementById('log-input');
+  const btn    = document.getElementById('log-btn');
   const status = document.getElementById('log-status');
-  const text  = input.value.trim();
+  const text   = input.value.trim();
   if (!text) { status.textContent = 'Nothing to save — write what you did first.'; return; }
 
   btn.disabled = true;
@@ -345,7 +246,7 @@ async function submitLog() {
       status.textContent = 'Could not save right now. Screenshot it and add manually.';
     }
   } catch(e) {
-    status.textContent = 'Offline? Screenshot this and add it to sessions-notes manually.';
+    status.textContent = 'Offline? Screenshot this and add to sessions-notes manually.';
   }
   btn.disabled = false;
 }
