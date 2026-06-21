@@ -225,23 +225,69 @@ header {
 .card-encourage .card-title { color: var(--a-encourage); }
 .card-encourage .card-body-large { color: #9d174d; font-size:18px; }
 
-/* ── Prospect list ── */
-.prospect-list {
+/* ── Prospect cards ── */
+.prospect-item {
+  background: rgba(255,255,255,0.55);
+  border-radius: 10px;
+  border-left: 4px solid var(--a-prospects);
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+.prospect-item:last-child { margin-bottom: 0; }
+.prospect-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+.prospect-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+}
+.prospect-status {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.prospect-meta {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 6px;
+}
+.prospect-summary {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 6px;
+  font-style: italic;
+}
+.prospect-nextsteps {
   list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-top: 4px;
+  gap: 4px;
 }
-.prospect-list li {
-  font-size: 16px;
-  font-weight: 500;
+.prospect-nextsteps li {
+  font-size: 13px;
   color: var(--text);
-  padding: 8px 12px;
-  background: rgba(255,255,255,0.5);
-  border-radius: 8px;
-  border-left: 3px solid var(--a-prospects);
-  line-height: 1.4;
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.45;
+}
+.prospect-nextsteps li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--a-prospects);
+  font-weight: 700;
 }
 
 /* ── Focus task list ── */
@@ -350,8 +396,8 @@ header {
   <div class="header-title">⚡ Focus</div>
   <div class="header-meta">
     <span class="pulse-dot"></span>
-    <span>2026-06-21 14:29</span>
-    <span class="header-label">midday</span>
+    <span>2026-06-21 16:15</span>
+    <span class="header-label">evening</span>
   </div>
 </header>
 
@@ -359,9 +405,9 @@ header {
 
   <!-- Greeting -->
   <div class="greeting-band">
-    <div class="greeting-time">Sunday, June 21 · 02:29 PM</div>
-    <div class="greeting-text">Hey Gemma — happy Sunday afternoon. You've got a full week spinning up, let's get you oriented fast.</div>
-    <span class="activity-pill">🔍 File activity scan shows the Scripts folder was actively edited at 2:28 PM today (1 file), and the Podcasts folder contains 9 files last touched in October 2025 — Scripts is live work, Podcasts appears dormant.</span>
+    <div class="greeting-time">Sunday, June 21 · 04:15 PM</div>
+    <div class="greeting-text">Hey Gemma — Sunday evening, you've got momentum. Let's make sure it lands.</div>
+    <span class="activity-pill">🔍 File activity shows the Scripts folder (4 files) was actively touched up to 4:14 PM today — your most recent work — and a Podcasts folder has 9 files last touched in October 2025, suggesting it may be dormant or archival.</span>
   </div>
 
   <!-- Where you left off -->
@@ -370,7 +416,7 @@ header {
       <span class="card-title">📍 Where You Left Off</span>
       <span class="card-badge">Context</span>
     </div>
-    <p class="card-body">Your most recent file activity shows a Scripts file was touched at 2:28 PM today — just a minute ago — so that's your live work right now. The WinWin outreach tracker (winwin.gemmaserenity.com) was fully built and deployed as of June 14, with the two-tab app live on Cloudflare Pages. The Global Water Resources note flags a hard new deadline of July 1st and a customer service email — that deadline is 10 days out and needs action this week.</p>
+    <p class="card-body">Your most urgent hard deadline is Global Water Resources — July 1st is the new cutoff, contact is customerservice@gwresources.com. Separately, you were deep in Scripts today (4 files touched as recently as 4:14 PM this afternoon), which is the freshest active work on your machine right now. The WinWin outreach tracker is fully deployed and live at winwin.gemmaserenity.com — that project is stable.</p>
   </div>
 
   <!-- Focus NOW -->
@@ -379,8 +425,8 @@ header {
       <span class="card-title">⚡ Focus Right Now</span>
       <span class="card-badge">💰 Money In Bank</span>
     </div>
-    <p class="card-body-large">Global Water Resources deadline is July 1st — that's 10 days away. Whatever needs to go to customerservice@gwresources.com, draft or send it TODAY while you have momentum.</p>
-    <ul class="task-list"><li><span class="task-check" onclick="this.classList.toggle('checked')"></span><span class="task-text">Draft and send (or schedule) the Global Water Resources email to customerservice@gwresources.com — July 1st deadline, do not let this slip</span></li><li><span class="task-check" onclick="this.classList.toggle('checked')"></span><span class="task-text">Check the Scripts file you were just in — capture what you were working on and decide if it needs a session note before you lose the thread</span></li><li><span class="task-check" onclick="this.classList.toggle('checked')"></span><span class="task-text">Run the Strategic Vision Filter session (already queued in timesheet.md) — score your backlog so tomorrow's networking calls have a clear pitch behind them</span></li></ul>
+    <p class="card-body-large">Handle the Global Water Resources deadline FIRST — July 1st is 10 days away and it has a specific email address. Draft or send whatever needs to go to customerservice@gwresources.com tonight so it doesn't slip.</p>
+    <ul class="task-list"><li><span class="task-check" onclick="this.classList.toggle('checked')"></span><span class="task-text">Email customerservice@gwresources.com re: Global Water Resources — July 1st deadline, do not let this sit</span></li><li><span class="task-check" onclick="this.classList.toggle('checked')"></span><span class="task-text">Review the Scripts files you were editing at 4:14 PM today — you were clearly mid-thought, capture where you left off before you lose the thread</span></li><li><span class="task-check" onclick="this.classList.toggle('checked')"></span><span class="task-text">Prep for Eric Twohey tomorrow at 11:00 AM — know your ask, your positioning, and what a win looks like from that call</span></li></ul>
   </div>
 
   <!-- Calendar -->
@@ -400,7 +446,7 @@ header {
       <span class="card-title">🤝 Prospects Pipeline</span>
       <span class="card-badge">Revenue</span>
     </div>
-    <ul class="prospect-list"><li>r</li><li>r</li><li>r</li><li>h</li><li>h</li><li>h</li><li>r</li><li>r</li><li>r</li><li>u</li><li>u</li><li>u</li><li>r</li><li>r</li><li>r</li><li>e</li><li>e</li><li>e</li><li>a</li><li>a</li><li>a</li></ul>
+    <li>• Eric Twohey — TOMORROW Jun 22 · eric@uncorkedmediagroup.com</li><li>• Charlie Sells — Jun 23 · charlie@clarityovereverything.com</li><li>• Trent Lapinski — Jun 25 · trent@productmarkterpro.com</li><li>• Suzanne Alexandra — Jun 26</li><li>• Brian Talbott — Jun 30 · brian@talbottbookkeeping.com</li><li>• Meghan Thomas — Jun 30 · mthomas@iridescestrategy.com</li><li>• Mark Young — Jul 1 · markyoung@luos-foundation.co.uk</li><li>You have 7 prospects in the next 10 days. That's a real pipeline — treat each call like it matters because it does.</li>
   </div>
 
   <!-- Wellness -->
@@ -409,7 +455,7 @@ header {
       <span class="card-title">💧 Body Check</span>
       <span class="card-badge">Non-Negotiable</span>
     </div>
-    <p class="card-body">It's mid-afternoon on a Sunday — drink a full glass of water right now before you do anything else. If you have an evening med or supplement, set a phone alarm for it now while you're thinking about it.</p>
+    <p class="card-body">It's past 4 PM — have you had water in the last hour? Grab a full glass right now. Also: Monday is your Cerebro Wellness appointment at 2:30 PM for your ADD medication update — make sure you're on time and have notes on how the current dose is working.</p>
   </div>
 
   
@@ -418,7 +464,7 @@ header {
           <span class="card-title">💡 New Idea — Parked</span>
           <span class="card-badge">Vision Filter</span>
         </div>
-        <p class="card-body">Strategic Vision Filter is already queued in timesheet.md and is marked 'not started — should be done BEFORE picking the next project.' This is a high-signal task, not a distraction — it belongs at the top of this week's solo work sessions. Parked for Vision Filter review: Podcasts folder (9 files, last touched Oct 2025) — unclear if this is an active project or archived content; worth a 5-minute triage.</p>
+        <p class="card-body">Strategic Vision Filter (from timesheet.md) — a scoring system to evaluate every queued project against vision alignment, needle movement, and financial inflow before scheduling it. Parked for Vision Filter review. This should run BEFORE the next build sprint.</p>
       </div>
 
   <!-- Encouragement -->
@@ -426,7 +472,7 @@ header {
     <div class="card-header" style="justify-content:center">
       <span class="card-title">✦ You've Got This</span>
     </div>
-    <p class="card-body-large">"You are building a sovereign, self-owned ecosystem from scratch — the WinWin tracker alone shows you can go from zero to a deployed full-stack app in a single day, and that capability is the engine everything else runs on."</p>
+    <p class="card-body-large">"You are building a sovereign operating system for your life and work — the outreach tracker, the scripts, the prospect pipeline — these aren't random tasks, they're the infrastructure of someone who refuses to be dependent on anyone else's system."</p>
   </div>
 
   <!-- Log what you did -->
@@ -441,7 +487,7 @@ header {
     <div class="log-status" id="log-status"></div>
   </div>
 
-  <div class="footer">Generated 2026-06-21 14:29 · scanning since Jun 21 · 02:18 PM · focus.gemmaserenity.com</div>
+  <div class="footer">Generated 2026-06-21 16:15 · scanning since Jun 21 · 02:29 PM · focus.gemmaserenity.com</div>
 
 </div>
 
@@ -465,7 +511,7 @@ async function submitLog() {
       body: JSON.stringify({
         text: text,
         timestamp: new Date().toISOString(),
-        briefing_label: 'midday'
+        briefing_label: 'evening'
       })
     });
     if (resp.ok) {
