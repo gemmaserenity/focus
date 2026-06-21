@@ -1,0 +1,88 @@
+E:\Everything>dir E:\Everything /b /ad
+yes Continuous Education
+no Energetic Attraction Routine
+yes Family Matters
+no Final Cut Pro
+yes Financials
+yes Gemma and Sascha pictures 2013-2023
+yes Gemma Personal Accountability Planner
+yes Gemma Serenity Consulting
+yes Gemma's Gem
+yes Gemma's Offers
+yes GEMS FOR GEMS
+yes GNS The Global Network of Success
+no HHFWC
+no HTC on repeat
+no IT PROS A LA CARTE
+no Little Angels Project 501c3
+no mc book air 2022-06-12
+no MEMC Make Every Movement Count
+no On the iMac on 6-17-2022
+yes Other People's Platforms
+yes Paradise Valley Home Research
+no Registre du commerce Geneve
+yes Rhapsody's Sanctuary 501c3
+yes Sascha Leadership
+yes Sascha NoName flashdrive
+yes SCORE
+no Unlock Your Legacy
+no video teasers
+no Young Living with Julie Burgess
+yes Gemma featured on
+yes Resources Vault by Sascha
+yes The Great Discovery
+yes Gemma's Vision Board
+yes  ISAGENIX 2024 and beyond
+yes Zoom 1
+yes Pictures
+yes Suno AI-powered SongWriter
+yes Gemma's Website
+yes Podcasts
+yes Contacts - Rolodex
+no HAPEACE LLC - CALIFORNIA
+no LATHC - L'Amour Toujours Holistic Center LLC
+yes Eliances
+yes Download
+yes Books publication
+yes Gemma's Magnetic Brand
+no Vona Nova
+yes LOVE AGAIN WITH CONFIDENCE
+yes Screen Recordings
+yes The Net That Works
+no download until 12-10-2025
+yes Real Estate Education
+yes WWWW
+yes Gemma Social Media Presence
+yes PRS Predictable Revenue System
+yes Passion Millionaire Connect - Robert Roth
+yes The Manifesting Noodle
+yes SASCHA Paradise Valley Sovereign App
+yes videos
+yes The Manifesting Queen
+yes sessions-notes
+yes prospects
+yes Next Ideas to be Developed
+yes Pets
+no Maricopa AZ - W Shaver Dr purchase process
+no Documents
+no Downloads
+no Music
+no LargeMediaFromC
+yes jupyter_notebook
+yes .ipynb_checkpoints
+yes mailer-engine
+yes full-automation-system
+yes sovereign-os-dashboard
+yes HELP outreach
+yes ecosystems
+yes gemma-affirmations
+yes forge
+yes PRS LinkedIn Agent
+yes vault-tmq
+yes Sovereign Daily Practice app
+yes networking-call-product
+yes focus
+yes daily-briefing
+
+E:\Everything>
+
