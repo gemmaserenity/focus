@@ -1,6 +1,8 @@
-const CACHE = 'focus-v1';
+const CACHE = 'focus-v2';
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(['/', '/manifest.json'])));
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll([
+    '/', '/manifest.json', '/favicon.svg', '/icon-192.png', '/icon-512.png'
+  ])));
   self.skipWaiting();
 });
 self.addEventListener('activate', e => {
