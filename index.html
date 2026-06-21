@@ -3,169 +3,381 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#110718">
+<meta name="theme-color" content="#1A1A1A">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Focus">
 <link rel="manifest" href="/manifest.json">
 <title>Focus · Gemma</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
 <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
-  --plum:       #110718;
-  --plum-rich:  #1c0c28;
-  --plum-mid:   #2a1040;
-  --gold:       #c9a84c;
-  --gold-pale:  #e8cc8c;
-  --gold-glow:  rgba(201,168,76,0.10);
-  --cream:      #faf6ef;
-  --text:       #d8cab0;
-  --muted:      #8a7a62;
-  --border:     rgba(201,168,76,0.14);
-  --border-mid: rgba(201,168,76,0.28);
-  --green:      #3a7a4a;
-  --green-bg:   rgba(58,122,74,0.12);
-  --serif: 'Cormorant Garamond', serif;
-  --sans:  'Jost', sans-serif;
+  --bg:         #F5F3EE;
+  --text:       #1A1A1A;
+  --text-muted: #555;
+  --border:     #D8D4CC;
+
+  /* Card colors — one per section */
+  --c-where:    #EAF2FF;   --a-where:    #3B82F6;
+  --c-focus:    #FFF1E6;   --a-focus:    #F97316;
+  --c-calendar: #E3F6FF;   --a-calendar: #0EA5E9;
+  --c-prospects:#E8FFF5;   --a-prospects:#10B981;
+  --c-wellness: #F0FFF4;   --a-wellness: #22C55E;
+  --c-ideas:    #F5F0FF;   --a-ideas:    #8B5CF6;
+  --c-log:      #FFF9E6;   --a-log:      #EAB308;
+  --c-encourage:#FFF0F5;   --a-encourage:#EC4899;
+
+  --radius: 14px;
+  --gap:    16px;
+  --sans:   'Inter', system-ui, sans-serif;
+  --serif:  'Cormorant Garamond', serif;
 }
-*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
-html { scroll-behavior:smooth; }
-body {
-  background: var(--plum);
-  color: var(--text);
+
+html, body {
   font-family: var(--sans);
-  font-weight: 300;
-  line-height: 1.7;
+  font-size: 16px;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
   min-height: 100vh;
   padding-bottom: env(safe-area-inset-bottom);
 }
-body::before {
-  content:'';
-  position:fixed; inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events:none; z-index:0; opacity:0.5;
+
+/* ── Header ── */
+header {
+  position: sticky; top: 0; z-index: 50;
+  background: #1A1A1A;
+  color: #FAF8F3;
+  padding: 0 20px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
-.wrap { max-width:680px; margin:0 auto; padding:24px 20px 120px; position:relative; z-index:1; }
-
-.header { text-align:center; padding:32px 0 24px; border-bottom:1px solid var(--border); margin-bottom:20px; }
-.header-eyebrow { font-size:0.65rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:10px; }
-.header-time { font-family:var(--serif); font-size:clamp(1.5rem,5vw,2.2rem); font-weight:400; color:var(--cream); line-height:1.15; }
-.header-time em { font-style:italic; color:var(--gold-pale); font-weight:300; }
-.header-greeting { font-size:0.9rem; color:var(--muted); margin-top:10px; }
-
-.activity-badge {
-  display:inline-block;
-  margin:14px auto 0;
-  font-size:0.72rem;
-  color:var(--muted);
-  background:rgba(201,168,76,0.06);
-  border:1px solid var(--border);
-  padding:6px 14px;
-  letter-spacing:0.04em;
-  max-width:100%;
+.header-title {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+}
+.header-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #999;
+}
+.pulse-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #22C55E;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:0.5; transform:scale(0.85); }
+}
+.header-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  background: rgba(255,255,255,0.1);
+  padding: 3px 10px;
+  border-radius: 20px;
+  color: #FAF8F3;
 }
 
-.section {
-  background:var(--plum-rich);
-  border:1px solid var(--border);
-  padding:20px 22px;
-  margin-bottom:14px;
-  position:relative;
+/* ── Layout ── */
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--gap);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
 }
-.section::before {
-  content:'';
-  position:absolute;
-  top:0; left:0; right:0; height:2px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  opacity:0;
+
+/* ── Greeting band ── */
+.greeting-band {
+  background: #1A1A1A;
+  color: #FAF8F3;
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  text-align: center;
 }
-.section-label { font-size:0.6rem; letter-spacing:0.24em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
-.section p { font-size:0.92rem; line-height:1.75; color:var(--text); }
-.section ul { list-style:none; margin:8px 0 0; }
-.section ul li {
-  font-size:0.88rem; color:var(--text);
-  padding:7px 0 7px 18px;
-  border-bottom:1px solid rgba(255,255,255,0.04);
-  position:relative; line-height:1.55;
+.greeting-time {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  font-style: italic;
+  font-weight: 400;
+  color: #F4E4B0;
+  line-height: 1.2;
+  margin-bottom: 8px;
 }
-.section ul li:last-child { border-bottom:none; }
-.section ul li::before { content:'◆'; color:var(--gold); font-size:0.3rem; position:absolute; left:0; top:12px; }
-.section pre { font-family:var(--sans); font-size:0.85rem; white-space:pre-wrap; color:var(--text); line-height:1.7; }
+.greeting-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #bbb;
+  line-height: 1.5;
+}
+.activity-pill {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 12px;
+  color: #999;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
 
-.focus-section { background:linear-gradient(135deg,var(--plum-mid),var(--plum-rich)); border-color:var(--border-mid); }
-.focus-section::before { opacity:1; }
-.focus-section .section-label { color:var(--gold-pale); }
-.focus-section p { font-family:var(--serif); font-size:1.1rem; font-style:italic; color:var(--cream); line-height:1.6; }
+/* ── Cards ── */
+.card {
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  border: 2px solid transparent;
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+}
 
-.wellness-section { border-color:rgba(58,122,74,0.35); background:var(--green-bg); }
-.wellness-section .section-label { color:#7ec88a; }
-.wellness-section p { color:#b8ddbf; }
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.card-title {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.card-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(0,0,0,0.08);
+}
+.card-body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+}
+.card-body-large {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--text);
+}
+.card pre {
+  font-family: var(--sans);
+  font-size: 15px;
+  white-space: pre-wrap;
+  line-height: 1.7;
+  color: var(--text);
+}
 
-.encourage-section { border:none; background:transparent; text-align:center; padding:16px 10px; }
-.encourage-section p { font-family:var(--serif); font-size:1.05rem; font-style:italic; color:var(--gold-pale); opacity:0.8; }
+/* Per-card colors */
+.card-where    { background: var(--c-where);     border-color: var(--a-where); }
+.card-where    .card-title { color: var(--a-where); }
+.card-where    .card-badge { color: var(--a-where); }
 
-.ideas-section { border-color:rgba(100,80,180,0.3); background:rgba(80,60,140,0.1); }
-.ideas-section .section-label { color:#b0a0e0; }
+.card-focus    { background: var(--c-focus);     border-color: var(--a-focus); }
+.card-focus    .card-title { color: var(--a-focus); }
+.card-focus    .card-badge { color: var(--a-focus); }
+.card-focus    .card-body-large { color: #c2440e; }
 
-.log-section { background:var(--plum-mid); border:1px solid var(--border-mid); padding:20px 22px; margin-bottom:14px; }
-.log-section .section-label { color:var(--gold-pale); }
+.card-calendar { background: var(--c-calendar);  border-color: var(--a-calendar); }
+.card-calendar .card-title { color: var(--a-calendar); }
+
+.card-prospects{ background: var(--c-prospects); border-color: var(--a-prospects); }
+.card-prospects .card-title { color: var(--a-prospects); }
+
+.card-wellness { background: var(--c-wellness);  border-color: var(--a-wellness); }
+.card-wellness .card-title { color: var(--a-wellness); }
+
+.card-ideas    { background: var(--c-ideas);     border-color: var(--a-ideas); }
+.card-ideas    .card-title { color: var(--a-ideas); }
+.card-ideas    .card-badge { background: rgba(139,92,246,0.12); color: var(--a-ideas); }
+
+.card-log      { background: var(--c-log);       border-color: var(--a-log); }
+.card-log      .card-title { color: var(--a-log); }
+
+.card-encourage{ background: var(--c-encourage); border-color: var(--a-encourage); text-align:center; }
+.card-encourage .card-title { color: var(--a-encourage); }
+.card-encourage .card-body-large { color: #9d174d; font-size:18px; }
+
+/* ── Focus task list ── */
+.task-list { list-style:none; margin-top:14px; display:flex; flex-direction:column; gap:10px; }
+.task-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.task-check {
+  width: 22px; height: 22px;
+  border: 2.5px solid var(--a-focus);
+  border-radius: 6px;
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-top: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  transition: background 0.15s, border-color 0.15s;
+  background: rgba(255,255,255,0.6);
+}
+.task-check.checked {
+  background: var(--a-focus);
+  border-color: var(--a-focus);
+  color: #fff;
+}
+.task-check.checked::after { content: '✓'; }
+.task-text { flex: 1; color: var(--text); font-weight: 500; }
+
+/* ── Log textarea ── */
 .log-textarea {
-  width:100%; background:rgba(0,0,0,0.3);
-  border:1px solid var(--border); color:var(--cream);
-  font-family:var(--sans); font-size:0.88rem; font-weight:300;
-  line-height:1.6; padding:12px 14px; resize:vertical; min-height:80px;
-  margin-top:10px; outline:none; transition:border-color 0.25s;
+  width: 100%;
+  min-height: 90px;
+  padding: 14px;
+  font-size: 16px;
+  font-family: var(--sans);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.6);
+  color: var(--text);
+  resize: vertical;
+  outline: none;
+  line-height: 1.6;
+  transition: border-color 0.15s;
+  margin-top: 12px;
 }
-.log-textarea:focus { border-color:var(--gold); }
-.log-textarea::placeholder { color:var(--muted); opacity:0.7; }
+.log-textarea:focus { border-color: var(--a-log); }
+.log-textarea::placeholder { color: #999; }
+
 .log-btn {
-  margin-top:10px; width:100%; padding:13px;
-  background:linear-gradient(135deg,var(--gold),#d9b86a);
-  color:var(--plum); font-family:var(--sans); font-size:0.65rem;
-  font-weight:600; letter-spacing:0.2em; text-transform:uppercase;
-  border:none; cursor:pointer; transition:filter 0.2s;
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: var(--sans);
+  background: #1A1A1A;
+  color: #FAF8F3;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  letter-spacing: 0.2px;
 }
-.log-btn:hover { filter:brightness(1.08); }
-.log-btn:disabled { opacity:0.5; cursor:not-allowed; filter:none; }
-.log-status { font-size:0.78rem; text-align:center; margin-top:8px; min-height:20px; color:var(--gold-pale); }
+.log-btn:hover { opacity: 0.85; }
+.log-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.log-status {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 8px;
+  min-height: 20px;
+  color: var(--a-log);
+  font-weight: 600;
+}
 
-.footer { text-align:center; padding-top:16px; font-size:0.65rem; color:var(--muted); opacity:0.5; letter-spacing:0.08em; }
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 8px 0 24px;
+  opacity: 0.6;
+  letter-spacing: 0.04em;
+}
 
-@media(prefers-reduced-motion:reduce) { * { transition:none !important; } }
+@media (max-width: 480px) {
+  :root { --gap: 12px; }
+  .card { padding: 16px 18px; }
+  .card-body { font-size: 15px; }
+  .card-body-large { font-size: 18px; }
+  .greeting-time { font-size: 1.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
 </style>
 </head>
 <body>
+
+<header>
+  <div class="header-title">⚡ Focus</div>
+  <div class="header-meta">
+    <span class="pulse-dot"></span>
+    <span>2026-06-21 13:49</span>
+    <span class="header-label">midday</span>
+  </div>
+</header>
+
 <div class="wrap">
 
-  <div class="header">
-    <span class="header-eyebrow">✦ Your Focus · Midday</span>
-    <div class="header-time">Sunday, June 21<br><em>01:36 PM</em></div>
-    <p class="header-greeting">Hey Gemma! Happy Sunday — you've been busy this morning. Here's your midday snapshot.</p>
-    <div class="activity-badge">🔍 Today's file activity was concentrated in Scripts, focus, daily-briefing, Gemma's Website, and gemma-affirmations — all touched this morning, suggesting active content and website work; vault-tmq and the WinWin HELP outreach folder show earlier-week activity that appears to be wrapping up.</div>
+  <!-- Greeting -->
+  <div class="greeting-band">
+    <div class="greeting-time">Sunday, June 21 · 01:49 PM</div>
+    <div class="greeting-text">Hey Gemma — happy Sunday. It's just past 1:49 PM. Here's where things stand.</div>
+    <span class="activity-pill">🔍 File activity scan shows two Script files edited at 1:48 PM today (active, just touched) and 9 Podcast files last modified October 2025 (dormant background context).</span>
   </div>
 
-  <div class="section">
-    <div class="section-label">📍 Where you left off</div>
-    <p>This morning you were deep in Scripts, Gemma's Website, and the focus folder — all touched within the last few hours today (as late as 1:35 PM). The gemma-affirmations project and vault-tmq were also active early this morning. The WinWin outreach tracker (winwin.gemmaserenity.com) was fully deployed back on June 15th and is live — that chapter is closed unless you're adding data.</p>
+  <!-- Where you left off -->
+  <div class="card card-where">
+    <div class="card-header">
+      <span class="card-title">📍 Where You Left Off</span>
+      <span class="card-badge">Context</span>
+    </div>
+    <p class="card-body">Your most active work right now is in Scripts — two files were touched at 1:48 PM today, just minutes ago. The Podcasts folder has 9 files but hasn't been touched since October, so that's likely background context. On the operations side, Global Water Resources has a hard new deadline of July 1st (customerservice@gwresources.com) — that's 10 days out and needs action this week. The WinWin outreach tracker is fully deployed at winwin.gemmaserenity.com with all tables, RLS, and mobile layout confirmed complete as of June 14.</p>
   </div>
 
-  <div class="section focus-section">
-    <div class="section-label">⚡ Focus right now — money in bank</div>
-    <p>Your Monday networking call with Eric Twohey is at 11 AM tomorrow — that is your most immediate money-and-empire move. Prep your positioning and a clear ask or offer before you sleep tonight.</p>
-    <ul><li>Prep for Eric Twohey networking call (Mon 11 AM) — write 3 sentences on what you want him to know and one clear next step you want to come out of it</li><li>Global Water Resources deadline is July 1st — confirm your deliverable or next touch is on track before Monday; email is customerservice@gwresources.com</li><li>Review the Scripts folder work from today — you were in it as recently as 1:35 PM, make sure any draft or outline is saved and named clearly so you can pick it up Monday afternoon after your calls</li></ul>
+  <!-- Focus NOW -->
+  <div class="card card-focus">
+    <div class="card-header">
+      <span class="card-title">⚡ Focus Right Now</span>
+      <span class="card-badge">💰 Money In Bank</span>
+    </div>
+    <p class="card-body-large">The Global Water Resources deadline is July 1st — that is your most time-sensitive money-or-relationship item on the board. If there is a deliverable, proposal, or follow-up email due there, that needs to move today or tomorrow morning before your calendar fills up.</p>
+    <ul class="task-list"><li><span class="task-check" onclick="this.classList.toggle('checked')"></span><span class="task-text">Send or prep the Global Water Resources deliverable/follow-up to customerservice@gwresources.com — deadline is July 1st, 10 days out</span></li><li><span class="task-check" onclick="this.classList.toggle('checked')"></span><span class="task-text">Finish whatever you were working on in Scripts (2 files, edited at 1:48 PM today — you were just in it, close the loop)</span></li><li><span class="task-check" onclick="this.classList.toggle('checked')"></span><span class="task-text">Before Monday's calls: review what you want from Eric Twohey (11 AM) and Charlie Sells (Tue 11 AM) — know your ask going in</span></li></ul>
   </div>
 
-  <div class="section">
-    <div class="section-label">📅 Calendar — next 48 hours</div>
-    <pre>  • Mon Jun 22 · 11:00 AM — networking call Gemma Serenity and Eric Twohey
+  <!-- Calendar -->
+  <div class="card card-calendar">
+    <div class="card-header">
+      <span class="card-title">📅 Calendar — Next 48 Hours</span>
+      <span class="card-badge">Upcoming</span>
+    </div>
+    <pre class="card-body">  • Mon Jun 22 · 11:00 AM — networking call Gemma Serenity and Eric Twohey
   • Mon Jun 22 · 2:30 PM — Bryan Lazaro (ADD medication update - Cerebro Wellness)
   • Tue Jun 23 · 11:00 AM — networking call Gemma Serenity and Charlie Sells</pre>
   </div>
 
-  <div class="section">
-    <div class="section-label">🤝 Prospects pipeline</div>
-    <pre>  • r
+  <!-- Prospects -->
+  <div class="card card-prospects">
+    <div class="card-header">
+      <span class="card-title">🤝 Prospects Pipeline</span>
+      <span class="card-badge">Revenue</span>
+    </div>
+    <pre class="card-body">  • r
   • r
   • r
   • h
@@ -188,30 +400,46 @@ body::before {
   • a</pre>
   </div>
 
-  <div class="section wellness-section">
-    <div class="section-label">💧 Body check</div>
-    <p>Drink a full glass of water right now before you read anything else. Your Bryan Lazaro appointment is tomorrow at 2:30 PM — that's your ADD medication review, so don't reschedule it. Take any afternoon meds if you haven't yet.</p>
+  <!-- Wellness -->
+  <div class="card card-wellness">
+    <div class="card-header">
+      <span class="card-title">💧 Body Check</span>
+      <span class="card-badge">Non-Negotiable</span>
+    </div>
+    <p class="card-body">It's mid-afternoon on a Sunday — drink a full glass of water right now before you do anything else. And if you have meds due this afternoon, take them before you go back to that script. You function better when the basics are covered.</p>
   </div>
 
   
-      <div class="section ideas-section">
-        <div class="section-label">💡 New idea — parked for Vision Filter</div>
-        <p>Scripts folder was heavily active today (17 files, last touch 1:35 PM) alongside a 'focus' folder — possible new content or product scripting direction emerging. Also 'Next Ideas to be Developed' folder was touched this morning (Jun 21, 8:02 AM) — two files flagged. Both parked for Vision Filter: run them through the vision / needle / money scoring before scheduling any build work.</p>
+      <div class="card card-ideas">
+        <div class="card-header">
+          <span class="card-title">💡 New Idea — Parked</span>
+          <span class="card-badge">Vision Filter</span>
+        </div>
+        <p class="card-body">Parked for Vision Filter: The Strategic Vision Filter task (timesheet.md, June 9) is still marked 'Not started' — this is the meta-layer that should score all queued projects against vision / needle / money before the next build gets scheduled. This needs to happen before the next new project kicks off. Flag for next Vision Filter session.</p>
       </div>
 
-  <div class="section encourage-section">
-    <p>"You are building a sovereign ecosystem from scratch — a live outreach tracker, a website, scripts, affirmations, a vault, prospects — and the file activity proves you showed up and worked on a Sunday morning. That is the empire being built in real time."</p>
+  <!-- Encouragement -->
+  <div class="card card-encourage">
+    <div class="card-header" style="justify-content:center">
+      <span class="card-title">✦ You've Got This</span>
+    </div>
+    <p class="card-body-large">"You are building a sovereign, self-owned infrastructure — your own OS, your own tools, your own tracking systems — and the fact that the WinWin tracker is live and the Scripts folder was open at 1:48 PM today, on a Sunday, says everything about how seriously you are actually moving."</p>
   </div>
 
-  <div class="log-section">
-    <div class="section-label">✍️ Log what you just did</div>
+  <!-- Log what you did -->
+  <div class="card card-log">
+    <div class="card-header">
+      <span class="card-title">✍️ Log What You Just Did</span>
+      <span class="card-badge">Session Notes</span>
+    </div>
     <textarea class="log-textarea" id="log-input"
-      placeholder="e.g. Finished postcall agent draft, sent follow-up to Dave, drank water ✓"></textarea>
-    <button class="log-btn" id="log-btn" onclick="submitLog()">→ Save to session notes</button>
+      placeholder="e.g. Finished postcall agent draft · sent Dave follow-up · drank water ✓"></textarea>
+    <button class="log-btn" id="log-btn" onclick="submitLog()">→ Save to Session Notes</button>
     <div class="log-status" id="log-status"></div>
   </div>
 
-  <div class="footer">Generated 2026-06-21 13:36 · scanning since Jun 14 · 01:35 PM · focus.gemmaserenity.com</div>
+  <div class="footer">Generated 2026-06-21 13:49 · scanning since Jun 21 · 01:36 PM · focus.gemmaserenity.com</div>
+
 </div>
 
 <script>
@@ -224,11 +452,9 @@ async function submitLog() {
   const btn    = document.getElementById('log-btn');
   const status = document.getElementById('log-status');
   const text   = input.value.trim();
-  if (!text) { status.textContent = 'Nothing to save — write what you did first.'; return; }
-
+  if (!text) { status.textContent = 'Write what you did first.'; return; }
   btn.disabled = true;
   status.textContent = 'Saving...';
-
   try {
     const resp = await fetch('https://focus-log.gemmaserenity.com/log', {
       method: 'POST',
@@ -240,13 +466,13 @@ async function submitLog() {
       })
     });
     if (resp.ok) {
-      status.textContent = '✦ Saved — your next briefing will reflect this.';
+      status.textContent = '✦ Saved — next briefing will reflect this.';
       input.value = '';
     } else {
-      status.textContent = 'Could not save right now. Screenshot it and add manually.';
+      status.textContent = 'Could not save right now. Add it to sessions-notes manually.';
     }
   } catch(e) {
-    status.textContent = 'Offline? Screenshot this and add to sessions-notes manually.';
+    status.textContent = 'Offline? Add it to sessions-notes manually.';
   }
   btn.disabled = false;
 }
