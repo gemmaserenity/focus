@@ -1,0 +1,13 @@
+{
+  "name": "Focus · Gemma",
+  "short_name": "Focus",
+  "description": "Daily briefing — where you are, what to do next",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#110718",
+  "theme_color": "#110718",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "/media/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
