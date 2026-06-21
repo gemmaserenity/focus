@@ -225,6 +225,25 @@ header {
 .card-encourage .card-title { color: var(--a-encourage); }
 .card-encourage .card-body-large { color: #9d174d; font-size:18px; }
 
+/* ── Prospect list ── */
+.prospect-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+.prospect-list li {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 8px;
+  border-left: 3px solid var(--a-prospects);
+  line-height: 1.4;
+}
+
 /* ── Focus task list ── */
 .task-list { list-style:none; margin-top:14px; display:flex; flex-direction:column; gap:10px; }
 .task-list li {
@@ -331,7 +350,7 @@ header {
   <div class="header-title">⚡ Focus</div>
   <div class="header-meta">
     <span class="pulse-dot"></span>
-    <span>2026-06-21 14:03</span>
+    <span>2026-06-21 14:18</span>
     <span class="header-label">midday</span>
   </div>
 </header>
@@ -340,9 +359,9 @@ header {
 
   <!-- Greeting -->
   <div class="greeting-band">
-    <div class="greeting-time">Sunday, June 21 · 02:03 PM</div>
-    <div class="greeting-text">Hey Gemma — happy Sunday. It's just past 2 PM, let's get you oriented fast.</div>
-    <span class="activity-pill">🔍 File activity shows two script files touched at 2:02 PM today (Scripts folder) and a Podcasts folder with 9 files last modified October 2025 — active work today was in Scripts, Podcasts appears dormant.</span>
+    <div class="greeting-time">Sunday, June 21 · 02:18 PM</div>
+    <div class="greeting-text">Hey Gemma — happy Sunday afternoon. You've got active irons in the fire. Let's get you oriented.</div>
+    <span class="activity-pill">🔍 File activity scan shows 3 Script files edited as recently as 2:16 PM today and a Podcasts folder with 9 files last touched in October — active script work is happening right now.</span>
   </div>
 
   <!-- Where you left off -->
@@ -351,7 +370,7 @@ header {
       <span class="card-title">📍 Where You Left Off</span>
       <span class="card-badge">Context</span>
     </div>
-    <p class="card-body">Your most recent tracked work is in the Scripts folder — two files touched just minutes ago at 2:02 PM today, which means you were actively working on scripts right before this briefing. The WinWin outreach tracker is fully deployed at winwin.gemmaserenity.com (built June 14), and you have a hard deadline of July 1st for Global Water Resources with their contact at customerservice@gwresources.com. The Strategic Vision Filter task is still sitting at 'Not Started' — it was flagged as something that should happen BEFORE picking the next build.</p>
+    <p class="card-body">Your most recent file activity (just minutes ago at 2:16 PM today) shows you were actively editing Scripts files — three files touched, most likely connected to the Podcasts folder work that's also in the mix. The WinWin outreach tracker is fully deployed at winwin.gemmaserenity.com and stable. The Global Water Resources note flags a hard new deadline of July 1st with a fresh contact email (customerservice@gwresources.com) — that's 10 days out and needs action.</p>
   </div>
 
   <!-- Focus NOW -->
@@ -360,8 +379,8 @@ header {
       <span class="card-title">⚡ Focus Right Now</span>
       <span class="card-badge">💰 Money In Bank</span>
     </div>
-    <p class="card-body-large">Finish whatever you were writing in those Scripts files right now — you were mid-flow 2 minutes ago. If those scripts are client-facing or income-generating, get them to a sendable state before you do anything else today.</p>
-    <ul class="task-list"><li><span class="task-check" onclick="this.classList.toggle('checked')"></span><span class="task-text">Complete and save the scripts you were actively editing at 2:02 PM — don't lose that momentum</span></li><li><span class="task-check" onclick="this.classList.toggle('checked')"></span><span class="task-text">Send or schedule your Global Water Resources outreach before July 1st deadline — email customerservice@gwresources.com and put a draft together today while it's top of mind</span></li><li><span class="task-check" onclick="this.classList.toggle('checked')"></span><span class="task-text">Prep a few talking points for tomorrow's networking calls (Eric Twohey 11 AM, Bryan Lazaro 2:30 PM) — even 3 bullet points per call makes a difference</span></li></ul>
+    <p class="card-body-large">Global Water Resources deadline is July 1st — that's your most time-sensitive money-relevant action. Send or follow up on whatever you need to get to customerservice@gwresources.com today while it's top of mind.</p>
+    <ul class="task-list"><li><span class="task-check" onclick="this.classList.toggle('checked')"></span><span class="task-text">Email customerservice@gwresources.com re: Global Water Resources — July 1st deadline is 10 days out, do not let this slip</span></li><li><span class="task-check" onclick="this.classList.toggle('checked')"></span><span class="task-text">Finish or review whatever you were just editing in Scripts (you were literally just in those files at 2:16 PM — close the loop before you context-switch)</span></li><li><span class="task-check" onclick="this.classList.toggle('checked')"></span><span class="task-text">Before tomorrow's networking calls, pull up one sharp sentence about what you're building so you're not fumbling the answer — Eric at 11 AM, Charlie Tuesday at 11 AM</span></li></ul>
   </div>
 
   <!-- Calendar -->
@@ -381,27 +400,29 @@ header {
       <span class="card-title">🤝 Prospects Pipeline</span>
       <span class="card-badge">Revenue</span>
     </div>
-    <p class="card-body" style="white-space:pre-wrap">  • r
-  • r
-  • r
-  • h
-  • h
-  • h
-  • r
-  • r
-  • r
-  • u
-  • u
-  • u
-  • r
-  • r
-  • r
-  • e
-  • e
-  • e
-  • a
-  • a
-  • a</p>
+    <ul class="prospect-list">
+      <li>r
+r
+r
+h
+h
+h
+r
+r
+r
+u
+u
+u
+r
+r
+r
+e
+e
+e
+a
+a
+a</li>
+    </ul>
   </div>
 
   <!-- Wellness -->
@@ -410,7 +431,7 @@ header {
       <span class="card-title">💧 Body Check</span>
       <span class="card-badge">Non-Negotiable</span>
     </div>
-    <p class="card-body">Hey — water first. Seriously, right now before you read anything else. If you haven't taken your afternoon meds yet, set that reminder for after Bryan's appointment tomorrow so you don't double up. You've got a full two days ahead — hydrated brain closes deals.</p>
+    <p class="card-body">It's mid-afternoon on a Sunday — have you had water in the last hour? Grab a full glass right now. And tomorrow's Cerebro Wellness appointment is your reminder that your brain chemistry is infrastructure — treat it like one.</p>
   </div>
 
   
@@ -419,7 +440,7 @@ header {
           <span class="card-title">💡 New Idea — Parked</span>
           <span class="card-badge">Vision Filter</span>
         </div>
-        <p class="card-body">Strategic Vision Filter: a structured scoring system (vision alignment / needle movement / financial inflow) to evaluate all queued projects before building them — this is sitting at Not Started and is genuinely high-leverage before the next build session. Parked for Vision Filter review.</p>
+        <p class="card-body">The Scripts + Podcasts file activity suggests something content-related is taking shape — possibly a podcast production workflow or scripted content system. Parked for Vision Filter: does this generate revenue or audience directly, or is it support infrastructure? Score it before scheduling more build time on it.</p>
       </div>
 
   <!-- Encouragement -->
@@ -427,7 +448,7 @@ header {
     <div class="card-header" style="justify-content:center">
       <span class="card-title">✦ You've Got This</span>
     </div>
-    <p class="card-body-large">"You built a full-stack outreach tracking system from zero in a single day and deployed it live — you are not someone who just has ideas, you are someone who ships them, and that is rare."</p>
+    <p class="card-body-large">"You are building a sovereign operating system for your life from scratch, in hard circumstances, with real tools and real deployed URLs — that's not a dream board, that's actual architecture."</p>
   </div>
 
   <!-- Log what you did -->
@@ -442,7 +463,7 @@ header {
     <div class="log-status" id="log-status"></div>
   </div>
 
-  <div class="footer">Generated 2026-06-21 14:03 · scanning since Jun 21 · 01:49 PM · focus.gemmaserenity.com</div>
+  <div class="footer">Generated 2026-06-21 14:18 · scanning since Jun 21 · 02:03 PM · focus.gemmaserenity.com</div>
 
 </div>
 
