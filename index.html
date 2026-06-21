@@ -2,31 +2,353 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#110718">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Focus">
 <link rel="manifest" href="/manifest.json">
 <title>Focus · Gemma</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
-:root { --plum:#110718; --gold:#c9a84c; --gold-pale:#e8cc8c; --cream:#faf6ef; --muted:#8a7a62; --serif:'Cormorant Garamond',serif; --sans:'Jost',sans-serif; }
+:root {
+  --plum:      #110718;
+  --plum-rich: #1c0c28;
+  --plum-mid:  #2a1040;
+  --gold:      #c9a84c;
+  --gold-pale: #e8cc8c;
+  --gold-glow: rgba(201,168,76,0.10);
+  --cream:     #faf6ef;
+  --text:      #d8cab0;
+  --muted:     #8a7a62;
+  --border:    rgba(201,168,76,0.14);
+  --border-mid:rgba(201,168,76,0.28);
+  --green:     #3a7a4a;
+  --green-bg:  rgba(58,122,74,0.12);
+  --serif: 'Cormorant Garamond', serif;
+  --sans:  'Jost', sans-serif;
+}
 *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
-body { background:var(--plum); color:var(--muted); font-family:var(--sans); font-weight:300; min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:40px 24px; }
-.wrap { max-width:480px; }
-.eyebrow { font-size:0.65rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:20px; }
-h1 { font-family:var(--serif); font-size:clamp(2rem,6vw,3rem); font-weight:400; color:var(--cream); line-height:1.2; margin-bottom:20px; }
-h1 em { font-style:italic; color:var(--gold-pale); font-weight:300; }
-p { font-size:0.9rem; line-height:1.8; opacity:0.6; }
-.rule { display:block; width:52px; height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent); margin:24px auto; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--plum);
+  color: var(--text);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.7;
+  min-height: 100vh;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+body::before {
+  content:'';
+  position:fixed; inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none; z-index:0; opacity:0.5;
+}
+.wrap { max-width:680px; margin:0 auto; padding:24px 20px 120px; position:relative; z-index:1; }
+
+/* Header */
+.header { text-align:center; padding:32px 0 24px; border-bottom:1px solid var(--border); margin-bottom:28px; }
+.header-eyebrow {
+  font-family:var(--sans);
+  font-size:0.65rem;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:var(--gold);
+  display:block;
+  margin-bottom:10px;
+}
+.header-time {
+  font-family:var(--serif);
+  font-size:clamp(1.5rem,5vw,2.2rem);
+  font-weight:400;
+  color:var(--cream);
+  line-height:1.15;
+}
+.header-time em { font-style:italic; color:var(--gold-pale); font-weight:300; }
+.header-greeting {
+  font-size:0.9rem;
+  color:var(--muted);
+  margin-top:10px;
+}
+
+/* Sections */
+.section {
+  background:var(--plum-rich);
+  border:1px solid var(--border);
+  padding:20px 22px;
+  margin-bottom:14px;
+  position:relative;
+}
+.section::before {
+  content:'';
+  position:absolute;
+  top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity:0;
+  transition:opacity 0.3s;
+}
+.section-label {
+  font-family:var(--sans);
+  font-size:0.6rem;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:10px;
+}
+.section p { font-size:0.92rem; line-height:1.75; color:var(--text); }
+.section ul { list-style:none; margin:8px 0 0; }
+.section ul li {
+  font-size:0.88rem;
+  color:var(--text);
+  padding:7px 0 7px 18px;
+  border-bottom:1px solid rgba(255,255,255,0.04);
+  position:relative;
+  line-height:1.55;
+}
+.section ul li:last-child { border-bottom:none; }
+.section ul li::before {
+  content:'◆';
+  color:var(--gold);
+  font-size:0.3rem;
+  position:absolute;
+  left:0; top:12px;
+}
+.section pre {
+  font-family:var(--sans);
+  font-size:0.85rem;
+  white-space:pre-wrap;
+  color:var(--text);
+  line-height:1.7;
+}
+
+/* Focus NOW — highlighted */
+.focus-section {
+  background:linear-gradient(135deg,var(--plum-mid),var(--plum-rich));
+  border-color:var(--border-mid);
+}
+.focus-section::before { opacity:1; }
+.focus-section .section-label { color:var(--gold-pale); }
+.focus-section p {
+  font-family:var(--serif);
+  font-size:1.1rem;
+  font-style:italic;
+  color:var(--cream);
+  line-height:1.6;
+}
+
+/* Wellness */
+.wellness-section { border-color:rgba(58,122,74,0.35); background:var(--green-bg); }
+.wellness-section .section-label { color:#7ec88a; }
+.wellness-section p { color:#b8ddbf; }
+
+/* Encouragement */
+.encourage-section {
+  border:none;
+  background:transparent;
+  text-align:center;
+  padding:16px 10px;
+}
+.encourage-section p {
+  font-family:var(--serif);
+  font-size:1.05rem;
+  font-style:italic;
+  color:var(--gold-pale);
+  opacity:0.8;
+}
+
+/* Ideas */
+.ideas-section { border-color:rgba(100,80,180,0.3); background:rgba(80,60,140,0.1); }
+.ideas-section .section-label { color:#b0a0e0; }
+
+/* Log what you did */
+.log-section {
+  background:var(--plum-mid);
+  border:1px solid var(--border-mid);
+  padding:20px 22px;
+  margin-bottom:14px;
+}
+.log-section .section-label { color:var(--gold-pale); }
+.log-textarea {
+  width:100%;
+  background:rgba(0,0,0,0.3);
+  border:1px solid var(--border);
+  color:var(--cream);
+  font-family:var(--sans);
+  font-size:0.88rem;
+  font-weight:300;
+  line-height:1.6;
+  padding:12px 14px;
+  resize:vertical;
+  min-height:80px;
+  margin-top:10px;
+  outline:none;
+  transition:border-color 0.25s;
+}
+.log-textarea:focus { border-color:var(--gold); }
+.log-textarea::placeholder { color:var(--muted); opacity:0.7; }
+.log-btn {
+  margin-top:10px;
+  width:100%;
+  padding:13px;
+  background:linear-gradient(135deg,var(--gold),#d9b86a);
+  color:var(--plum);
+  font-family:var(--sans);
+  font-size:0.65rem;
+  font-weight:600;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  border:none;
+  cursor:pointer;
+  transition:filter 0.2s;
+}
+.log-btn:hover { filter:brightness(1.08); }
+.log-btn:disabled { opacity:0.5; cursor:not-allowed; filter:none; }
+.log-status {
+  font-size:0.78rem;
+  text-align:center;
+  margin-top:8px;
+  min-height:20px;
+  color:var(--gold-pale);
+}
+
+/* Footer */
+.footer {
+  text-align:center;
+  padding-top:16px;
+  font-size:0.65rem;
+  color:var(--muted);
+  opacity:0.5;
+  letter-spacing:0.08em;
+}
+
+@media(prefers-reduced-motion:reduce) { * { transition:none !important; } }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <span class="eyebrow">✦ focus.gemmaserenity.com</span>
-  <h1>Your briefing is<br><em>on its way.</em></h1>
-  <span class="rule"></span>
-  <p>The daily briefing script will populate this page automatically at 7:00 AM, 12:00 PM, and 5:00 PM. It reads your session notes, calendar, and prospect pipeline — then tells you exactly where you are and what to do next.</p>
+
+  <!-- Header -->
+  <div class="header">
+    <span class="header-eyebrow">✦ Your Focus · Midday</span>
+    <div class="header-time">Sunday, June 21<br><em>01:06 PM</em></div>
+    <p class="header-greeting">Hey Gemma, good afternoon — it's Sunday the 21st, just after 1 PM. Let's get you oriented fast.</p>
+  </div>
+
+  <!-- Where you left off -->
+  <div class="section">
+    <div class="section-label">📍 Where you left off</div>
+    <p>You wrapped up the WinWin outreach tracker build — a full two-tab app live at winwin.gemmaserenity.com tracking every org and personal contact you and Sascha have reached out to for help (food, pet care, utilities, churches). The app is deployed on Cloudflare Pages, Supabase is seeded, mobile-responsive, favicon uploaded, and everything is live. You also have a hard deadline update: Global Water Resources moved their deadline to July 1st — that's 10 days away.</p>
+  </div>
+
+  <!-- Focus NOW -->
+  <div class="section focus-section">
+    <div class="section-label">⚡ Focus right now — money in bank</div>
+    <p>Email Global Water Resources at customerservice@gwresources.com TODAY. July 1st is 10 days out and this is a utilities lifeline — get that correspondence in writing before the week starts.</p>
+    <ul><li>Email customerservice@gwresources.com now — reference the July 1st deadline, ask for confirmation of your account status and any assistance options</li><li>Log that GWR outreach in your WinWin tracker at winwin.gemmaserenity.com so it's on record</li><li>Review the Strategic Vision Filter task (timesheet.md) — before you start any new build sprint, run the filter so your next session moves money, not just code</li></ul>
+  </div>
+
+  <!-- Calendar -->
+  <div class="section">
+    <div class="section-label">📅 Calendar — next 48 hours</div>
+    <pre>  • Mon Jun 22 · 11:00 AM — networking call Gemma Serenity and Eric Twohey
+  • Mon Jun 22 · 2:30 PM — Bryan Lazaro (ADD medication update - Cerebro Wellness)
+  • Tue Jun 23 · 11:00 AM — networking call Gemma Serenity and Charlie Sells</pre>
+  </div>
+
+  <!-- Prospects -->
+  <div class="section">
+    <div class="section-label">🤝 Prospects pipeline</div>
+    <pre>  • r
+  • r
+  • r
+  • h
+  • h
+  • h
+  • r
+  • r
+  • r
+  • u
+  • u
+  • u
+  • r
+  • r
+  • r
+  • e
+  • e
+  • e
+  • a
+  • a
+  • a</pre>
+  </div>
+
+  <!-- Wellness -->
+  <div class="section wellness-section">
+    <div class="section-label">💧 Body check</div>
+    <p>It's early afternoon on a Sunday — drink a full glass of water right now before you do anything else. If you have meds due today, take them with that water. You have Bryan's ADD medication appointment Monday at 2:30 PM — jot down anything you want to tell him today while it's fresh.</p>
+  </div>
+
+  
+        <div class="section ideas-section">
+          <div class="section-label">💡 New idea — parked for Vision Filter</div>
+          <p>PARKED — PENDING VISION FILTER: 'Strategic Vision Filter' task (timesheet.md, 2026-06-09) — a structured scoring pass on all queued projects against Vision Alignment / Needle Movement / Financial Inflow criteria. This should run BEFORE the next build sprint begins. No new ideas surfaced in today's notes beyond what's already logged.</p>
+        </div>
+
+  <!-- Encouragement -->
+  <div class="section encourage-section">
+    <p>"You built a real, deployed, database-backed app from scratch to track your survival network — that's not just scrappy, that's exactly the kind of infrastructure builder who can run a tech empire."</p>
+  </div>
+
+  <!-- Log what you did -->
+  <div class="log-section">
+    <div class="section-label">✍️ Log what you just did</div>
+    <textarea class="log-textarea" id="log-input"
+      placeholder="e.g. Finished the postcall agent draft, sent follow-up to Dave, drank water ✓"></textarea>
+    <button class="log-btn" id="log-btn" onclick="submitLog()">→ Save to session notes</button>
+    <div class="log-status" id="log-status"></div>
+  </div>
+
+  <div class="footer">Generated 2026-06-21 13:06 · focus.gemmaserenity.com · auto-updates 3×/day</div>
 </div>
+
+<script>
+// Register service worker for PWA
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(function(){});
+}
+
+async function submitLog() {
+  const input = document.getElementById('log-input');
+  const btn   = document.getElementById('log-btn');
+  const status = document.getElementById('log-status');
+  const text  = input.value.trim();
+  if (!text) { status.textContent = 'Nothing to save — write what you did first.'; return; }
+
+  btn.disabled = true;
+  status.textContent = 'Saving...';
+
+  try {
+    const resp = await fetch('https://focus-log.gemmaserenity.com/log', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        text: text,
+        timestamp: new Date().toISOString(),
+        briefing_label: 'midday'
+      })
+    });
+    if (resp.ok) {
+      status.textContent = '✦ Saved — your next briefing will reflect this.';
+      input.value = '';
+    } else {
+      status.textContent = 'Could not save right now. Screenshot it and add manually.';
+    }
+  } catch(e) {
+    status.textContent = 'Offline? Screenshot this and add it to sessions-notes manually.';
+  }
+  btn.disabled = false;
+}
+</script>
 </body>
 </html>
