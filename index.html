@@ -292,34 +292,27 @@ header {
 
 /* ── Focus task list ── */
 .task-list { list-style:none; margin-top:14px; display:flex; flex-direction:column; gap:10px; }
-.task-list li {
+.task-list li { display:flex; align-items:flex-start; }
+.task-label {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  font-size: 16px;
-  line-height: 1.5;
-}
-.task-check {
-  width: 22px; height: 22px;
-  border: 2.5px solid var(--a-focus);
-  border-radius: 6px;
-  flex-shrink: 0;
   cursor: pointer;
+  width: 100%;
+}
+.task-check-input {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
   margin-top: 1px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  transition: background 0.15s, border-color 0.15s;
-  background: rgba(255,255,255,0.6);
+  accent-color: var(--a-focus);
+  cursor: pointer;
 }
-.task-check.checked {
-  background: var(--a-focus);
-  border-color: var(--a-focus);
-  color: #fff;
+.task-check-input:checked + .task-text {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
-.task-check.checked::after { content: '✓'; }
-.task-text { flex: 1; color: var(--text); font-weight: 500; }
+.task-text { flex:1; color:var(--text); font-weight:500; font-size:16px; line-height:1.5; }
 
 /* ── Log textarea ── */
 .log-textarea {
@@ -396,7 +389,7 @@ header {
   <div class="header-title">⚡ Focus</div>
   <div class="header-meta">
     <span class="pulse-dot"></span>
-    <span>2026-06-22 23:17</span>
+    <span>2026-06-22 23:21</span>
     <span class="header-label">evening</span>
   </div>
 </header>
@@ -405,9 +398,9 @@ header {
 
   <!-- Greeting -->
   <div class="greeting-band">
-    <div class="greeting-time">Monday, June 22 · 11:17 PM</div>
-    <div class="greeting-text">Hey Gemma — it's late and you've had a full day. Here's where things stand. 💛</div>
-    <span class="activity-pill">🔍 Scripts folder had activity at 11:16 PM tonight — active build in progress at close of day.</span>
+    <div class="greeting-time">Monday, June 22 · 11:21 PM</div>
+    <div class="greeting-text">Hey Gemma — it's late and you've clearly been in build mode. Here's where things stand. 🌙</div>
+    <span class="activity-pill">🔍 Scripts folder had 2 files touched at 11:20 PM tonight — active work was happening right up until this briefing ran.</span>
   </div>
 
   <!-- Where you left off -->
@@ -416,7 +409,7 @@ header {
       <span class="card-title">📍 Where You Left Off</span>
       <span class="card-badge">Context</span>
     </div>
-    <p class="card-body">Your Scripts folder was touched at 11:16 PM tonight — something was actively being worked on right up to this moment. The Focus PWA and prospect automation pipeline are both live and running. The friendly-chat page is deployed and catching old calendar links.</p>
+    <p class="card-body">You were in Scripts just moments ago — files touched at 11:20 PM tonight. The Focus PWA and prospect automation pipeline are both live and running. Twelve prospects were processed through the sequence this week, and the friendly-chat page is deployed and active on gemmaserenity.com.</p>
   </div>
 
   <!-- Focus NOW -->
@@ -425,8 +418,8 @@ header {
       <span class="card-title">⚡ Focus Right Now</span>
       <span class="card-badge">💰 Money In Bank</span>
     </div>
-    <p class="card-body-large">Your call with Charlie Sells is at 11:00 AM tomorrow — make sure you've looked at his precall brief tonight or first thing in the morning so you walk in sharp.</p>
-    <ul class="task-list"><li><span class="task-check" onclick="this.classList.toggle('checked')"></span><span class="task-text">Review Charlie Sells precall brief before 11:00 AM tomorrow (clarity@clarityovereverything.com)</span></li><li><span class="task-check" onclick="this.classList.toggle('checked')"></span><span class="task-text">Add the quick-copy/export button to the Focus PWA so briefing text can be pasted into WhatsApp, email, or Messenger in one tap</span></li><li><span class="task-check" onclick="this.classList.toggle('checked')"></span><span class="task-text">Check that Eric Twohey's session today was logged — if a meeting happened, make sure notes and any follow-up are captured</span></li></ul>
+    <p class="card-body-large">Charlie Sells is tomorrow at 11:00 AM — make sure you've reviewed his precall brief tonight or first thing in the morning so you walk in sharp.</p>
+    <ul class="task-list"><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk0" onchange="saveCheck(this)"><span class="task-text">Review Charlie Sells precall brief before 11:00 AM tomorrow — clarity.overeverything.com, note his name in the calendar</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk1" onchange="saveCheck(this)"><span class="task-text">Eric Twohey was today (Jun 22) — if the call happened, log your notes and make sure the prospect automation picks up the transcript</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk2" onchange="saveCheck(this)"><span class="task-text">Add the one-tap clipboard export feature to the Focus PWA — you logged this request at 6:05 AM and it's a quick win for daily usability</span></label></li></ul>
   </div>
 
   <!-- Calendar -->
@@ -445,7 +438,7 @@ header {
       <span class="card-title">🤝 Prospects Pipeline</span>
       <span class="card-badge">Revenue</span>
     </div>
-    <li>Eric Twohey was scheduled TODAY — check if notes or next steps need logging. Charlie Sells is tomorrow at 11 AM — he's your immediate focus. Suzanne Alexandra is in 4 days. Brian Talbott, Meghan Thomas, and Mark Young follow in the next 8–9 days. Joe Kovacs is rescheduled to July 22 — handled.</li>
+    <li>Pipeline is active and stacked. Eric Twohey was today — confirm that call happened and transcript is in place. Charlie Sells is tomorrow morning — your next live conversation. Suzanne Alexandra is in 4 days. Brian Talbott and Meghan Thomas both land on Jun 30. Mark Young (UK-based, LUOS Foundation) on Jul 1. Joe Kovacs is rescheduled for Jul 22 — plenty of runway there.</li>
   </div>
 
   <!-- Wellness -->
@@ -454,7 +447,7 @@ header {
       <span class="card-title">💧 Body Check</span>
       <span class="card-badge">Non-Negotiable</span>
     </div>
-    <p class="card-body">Drink a full glass of water before you close the laptop. Meds if you haven't taken evening ones yet. You've been heads-down — your body needs the wind-down signal. 💙</p>
+    <p class="card-body">It's nearly midnight — drink a full glass of water before you sleep, and don't skip your morning meds tomorrow. You've got a call at 11 and you want to be clear. 💙</p>
   </div>
 
   
@@ -463,7 +456,7 @@ header {
           <span class="card-title">💡 New Idea — Parked</span>
           <span class="card-badge">Vision Filter</span>
         </div>
-        <p class="card-body">Export/share button for the Focus PWA briefing (WhatsApp, email, Messenger, local note) — parked for Vision Filter review. Confirmed high-needle, low-lift.</p>
+        <p class="card-body">One-tap clipboard export for the Focus PWA (copy briefing text instantly to WhatsApp, email, LinkedIn, Messenger, or local note) — flagged by you this morning, parked for Vision Filter prioritisation.</p>
       </div>
 
   <!-- Encouragement -->
@@ -471,7 +464,7 @@ header {
     <div class="card-header" style="justify-content:center">
       <span class="card-title">✦ You've Got This</span>
     </div>
-    <p class="card-body-large">"You built six live systems in a single day last weekend — the empire is not a someday dream, it's a thing that already exists and keeps running while you sleep."</p>
+    <p class="card-body-large">"You built six production systems in one day and now have a fully automated prospect pipeline running while you sleep — that's not hustle, that's architecture."</p>
   </div>
 
   <!-- Log what you did -->
@@ -486,7 +479,7 @@ header {
     <div class="log-status" id="log-status"></div>
   </div>
 
-  <div class="footer">Generated 2026-06-22 23:17 · scanning since Jun 22 · 11:12 PM · focus.gemmaserenity.com</div>
+  <div class="footer">Generated 2026-06-22 23:21 · scanning since Jun 22 · 11:17 PM · focus.gemmaserenity.com</div>
 
 </div>
 
@@ -498,31 +491,27 @@ if ('serviceWorker' in navigator) {
 const WORKER = 'https://focus-log.gemmagorokhoff.com';
 
 // ── Checkbox persistence ──
-document.querySelectorAll('.task-check').forEach(function(box) {
-  const li   = box.closest('li');
-  const text = li ? (li.querySelector('.task-text') || {}).textContent || '' : '';
-  const id   = 'task-' + text.trim().slice(0, 40).replace(/[\s]+/g, '-').toLowerCase();
+function saveCheck(input) {
+  const id      = input.id;
+  const checked = input.checked;
+  localStorage.setItem(id, checked ? '1' : '0');
 
-  // Restore state from localStorage (instant, no network)
-  if (localStorage.getItem(id) === 'checked') {
-    box.classList.add('checked');
+  // Send to KV Worker
+  const text = input.nextElementSibling ? input.nextElementSibling.textContent.trim() : '';
+  fetch('https://focus-log.gemmagorokhoff.com/check', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ item_id: id, item_text: text, checked: checked })
+  }).catch(function(){});
+}
+
+// Restore checkbox states on load
+document.querySelectorAll('.task-check-input').forEach(function(input) {
+  if (localStorage.getItem(input.id) === '1') {
+    input.checked = true;
+    const textEl = input.nextElementSibling;
+    if (textEl) textEl.style.opacity = '0.5';
   }
-
-  box.addEventListener('click', function() {
-    const checked = box.classList.toggle('checked');
-    localStorage.setItem(id, checked ? 'checked' : 'unchecked');
-
-    // Also send to KV so Python picks it up
-    fetch(WORKER + '/check', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        item_id:   id,
-        item_text: text.trim(),
-        checked:   checked
-      })
-    }).catch(function(){});  // silent fail — localStorage already saved it
-  });
 });
 
 // ── Log submission ──
