@@ -32,6 +32,7 @@
   --c-linkedin: #E8F5FF;   --a-linkedin: #0EA5E9;
   --c-wellness: #F0FFF4;   --a-wellness: #22C55E;
   --c-ideas:    #F5F0FF;   --a-ideas:    #8B5CF6;
+  --c-whatsapp: #F0E6FF;   --a-whatsapp: #A855F7;
   --c-log:      #FFF9E6;   --a-log:      #EAB308;
   --c-encourage:#FFF0F5;   --a-encourage:#EC4899;
 
@@ -221,6 +222,10 @@ header {
 .card-ideas    { background: var(--c-ideas);     border-color: var(--a-ideas); }
 .card-ideas    .card-title { color: var(--a-ideas); }
 .card-ideas    .card-badge { background: rgba(139,92,246,0.12); color: var(--a-ideas); }
+
+.card-whatsapp { background: var(--c-whatsapp);   border-color: var(--a-whatsapp); }
+.card-whatsapp .card-title { color: var(--a-whatsapp); }
+.card-whatsapp .card-badge { background: rgba(168,85,247,0.12); color: var(--a-whatsapp); }
 
 .card-log      { background: var(--c-log);       border-color: var(--a-log); }
 .card-log      .card-title { color: var(--a-log); }
@@ -433,8 +438,8 @@ header {
   <div class="header-title">⚡ Focus</div>
   <div class="header-meta">
     <span class="pulse-dot"></span>
-    <span>2026-06-23 08:47</span>
-    <span class="header-label">morning</span>
+    <span>2026-06-23 14:26</span>
+    <span class="header-label">midday</span>
   </div>
 </header>
 
@@ -442,9 +447,9 @@ header {
 
   <!-- Greeting -->
   <div class="greeting-band">
-    <div class="greeting-time">Tuesday, June 23 · 08:47 AM</div>
-    <div class="greeting-text">Good morning, Gemma — it's Tuesday June 23rd. Charlie Sells is TODAY. You're ready. Let's go.</div>
-    <span class="activity-pill">🔍 Prospects folder and Scripts folder both show activity within the last 2 minutes — automation is running cleanly.</span>
+    <div class="greeting-time">Tuesday, June 23 · 02:26 PM</div>
+    <div class="greeting-text">Hey Gemma! Midday check-in — you've had a seriously productive morning. Let's make sure the afternoon lands just as strong. 💪</div>
+    <span class="activity-pill">🔍 Active file touches today across Scripts (2:25 PM), sessions-notes (1:11 PM), and Next Ideas to be Developed (12:04 PM) — all three signal live, in-progress work on the WhatsApp MCP build and strategic planning.</span>
   </div>
 
   <!-- Where you left off -->
@@ -453,7 +458,7 @@ header {
       <span class="card-title">📍 Where You Left Off</span>
       <span class="card-badge">Context</span>
     </div>
-    <p class="card-body">You reviewed the Charlie Sells precall brief — that's done and logged. The Focus Briefing PWA is live and running beautifully at focus.gemmaserenity.com, and your Scripts folder shows activity as of minutes ago, so automation is humming. Prospects folder was also just touched — the pipeline is moving.</p>
+    <p class="card-body">You just completed a major engineering milestone — your fully local WhatsApp MCP server is live, stable, and operational. Scripts folder was touched as recently as 2:25 PM, so that build is actively moving. You also completed the Charlie Sells pre-call review this morning.</p>
   </div>
 
   <!-- Focus NOW -->
@@ -462,8 +467,8 @@ header {
       <span class="card-title">⚡ Focus Right Now</span>
       <span class="card-badge">💰 Money In Bank</span>
     </div>
-    <p class="card-body-large">Charlie Sells call is at 11:00 AM TODAY — that's just over 2 hours away. Pull up your precall brief now, get grounded, and be ready.</p>
-    <ul class="task-list"><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk0" onchange="saveCheck(this)"><span class="task-text">Open your Charlie Sells precall brief and do a final 10-minute review before 10:45 AM — clarity.overeverything.com</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk1" onchange="saveCheck(this)"><span class="task-text">After the call: log your notes immediately and drop the transcript into E:\Everything\Prospects\charlie-sells so the automation picks it up</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk2" onchange="saveCheck(this)"><span class="task-text">For Suzanne Alexandra (Friday Jun 26): paste your LinkedIn DM thread into suzanne-alexandra-dm-thread.txt and re-run the precall brief script — her brief is already AI-powered, just needs the DM thread added</span></label></li></ul>
+    <p class="card-body-large">Charlie Sells call is TODAY — confirm the time and make sure you're prepped and ready. This is a live money conversation.</p>
+    <ul class="task-list"><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk0" onchange="saveCheck(this)"><span class="task-text">Confirm Charlie Sells call time and join link — brief is done, you're ready, just verify the logistics</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk1" onchange="saveCheck(this)"><span class="task-text">After the call: log your notes immediately and drop them in the Charlie Sells prospect folder so automation picks up the transcript</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk2" onchange="saveCheck(this)"><span class="task-text">Suzanne Alexandra call is Friday Jun 26 — her brief is READY, but her LinkedIn DM thread file is still missing. Drop that in her folder today while it's fresh</span></label></li></ul>
   </div>
 
   <!-- Passion Millionaire Connect -->
@@ -538,9 +543,19 @@ header {
       <span class="card-title">📅 Calendar — Next 48 Hours</span>
       <span class="card-badge">Upcoming</span>
     </div>
-    <p class="card-body" style="white-space:pre-wrap">  • Tue Jun 23 · 11:00 AM — networking call Gemma Serenity and Charlie Sells
-  • Wed Jun 24 · 6:00 AM — Receive food delivery</p>
+    <p class="card-body" style="white-space:pre-wrap">  • Wed Jun 24 · 6:00 AM — Receive food delivery
+  • Thu Jun 25 · 12:00 PM — networking call Gemma Serenity and Tina Dexter </p>
   </div>
+
+  <!-- WhatsApp Messages -->
+  
+      <div class="card card-whatsapp">
+        <div class="card-header">
+          <span class="card-title">💬 WhatsApp Messages</span>
+          <span class="card-badge">Communications</span>
+        </div>
+        <p class="card-body">WhatsApp message parsing didn't load this cycle — no summary available. Check manually if you're expecting anything time-sensitive.</p>
+      </div>
 
   <!-- Prospects -->
   <div class="card card-prospects">
@@ -548,7 +563,7 @@ header {
       <span class="card-title">🤝 Prospects Pipeline</span>
       <span class="card-badge">Revenue</span>
     </div>
-    <li>Charlie Sells is TODAY at 11:00 AM. Eric Twohey was yesterday — if that call happened, make sure your notes are logged and the transcript is in his folder. Suzanne Alexandra is Friday — brief is ready, just needs your DM thread. Brian Talbott and Meghan Thomas are both June 30th, Mark Young is July 1st — those are next week, nothing urgent yet.</li>
+    <li>Charlie Sells is TODAY — pre-call review is confirmed done ✅. Suzanne Alexandra is Friday Jun 26 — brief is AI-powered and ready, just needs her LinkedIn DM thread added. Brian Talbott and Meghan Thomas are both Jun 30, Mark Young is Jul 1 — all coming up fast next week.</li>
   </div>
 
   <!-- Wellness -->
@@ -557,7 +572,7 @@ header {
       <span class="card-title">💧 Body Check</span>
       <span class="card-badge">Non-Negotiable</span>
     </div>
-    <p class="card-body">Water first, meds if you haven't yet — before the call, not after. You'll show up sharper. 💧</p>
+    <p class="card-body">Midday in Maricopa — it is HOT. Big glass of water right now, and don't skip your meds if you haven't taken them yet. You can't close deals dehydrated. 💧</p>
   </div>
 
   
@@ -566,7 +581,7 @@ header {
           <span class="card-title">💡 New Idea — Parked</span>
           <span class="card-badge">Vision Filter</span>
         </div>
-        <p class="card-body">Quick-export feature for the daily briefing (clipboard copy for WhatsApp, email, LinkedIn, Facebook Messenger, or local note) — spotted in focus log, parked for Vision Filter review.</p>
+        <p class="card-body">Focus PWA export feature — quick clipboard copy of the daily briefing to paste into WhatsApp, email, LinkedIn, or Facebook Messenger. Parked for Vision Filter review.</p>
       </div>
 
   <!-- Encouragement -->
@@ -574,7 +589,7 @@ header {
     <div class="card-header" style="justify-content:center">
       <span class="card-title">✦ You've Got This</span>
     </div>
-    <p class="card-body-large">"You built a fully automated daily briefing system that scans thousands of files, hits your calendar, and publishes to your phone — that is sovereign infrastructure, and it's already working for you."</p>
+    <p class="card-body-large">"You built a fully private, fully local WhatsApp automation layer from scratch today — that's not a tutorial win, that's an infrastructure win, and it opens up CRM sync, AI agents, and pipeline automation that most people are paying thousands for."</p>
   </div>
 
   <!-- Log what you did -->
@@ -589,7 +604,7 @@ header {
     <div class="log-status" id="log-status"></div>
   </div>
 
-  <div class="footer">Generated 2026-06-23 08:47 · scanning since Jun 23 · 08:45 AM · focus.gemmaserenity.com</div>
+  <div class="footer">Generated 2026-06-23 14:26 · scanning since Jun 23 · 08:47 AM · focus.gemmaserenity.com</div>
 
 </div>
 
@@ -642,7 +657,7 @@ async function submitLog() {
       body: JSON.stringify({
         text:            text,
         timestamp:       new Date().toISOString(),
-        briefing_label:  'morning'
+        briefing_label:  'midday'
       })
     });
     if (resp.ok) {
