@@ -35,6 +35,10 @@
   --c-ideas:    #F5F0FF;   --a-ideas:    #8B5CF6;
   --c-log:      #FFF9E6;   --a-log:      #EAB308;
   --c-encourage:#FFF0F5;   --a-encourage:#EC4899;
+  --c-nudged:   #FFF8E1;   --a-nudged:   #F5A623;
+  --c-notes:    #E6FBF8;   --a-notes:    #14B8A6;
+  --c-belief:   #FBF0FA;   --a-belief:   #C084CC;
+  --c-prospect-review: #EEF2FF; --a-prospect-review: #6366F1;
 
   --radius: 14px;
   --gap:    16px;
@@ -234,6 +238,43 @@ header {
 .card-encourage .card-title { color: var(--a-encourage); }
 .card-encourage .card-body-large { color: #9d174d; font-size:18px; }
 
+.card-nudged   { background: var(--c-nudged);    border-color: var(--a-nudged); }
+.card-nudged   .card-title { color: #b9690b; }
+.card-nudged   .card-badge { background: rgba(245,166,35,0.18); color: #b9690b; }
+
+.card-notes    { background: var(--c-notes);     border-color: var(--a-notes); }
+.card-notes    .card-title { color: #0d8e7f; }
+.card-notes    .card-badge { background: rgba(20,184,166,0.18); color: #0d8e7f; }
+
+.card-belief   { background: var(--c-belief);    border-color: var(--a-belief); }
+.card-belief   .card-title { color: #9333a6; }
+.card-belief   .card-badge { background: rgba(192,132,204,0.18); color: #9333a6; }
+
+.card-prospect-review { background: var(--c-prospect-review); border-color: var(--a-prospect-review); }
+.card-prospect-review .card-title { color: #4338ca; }
+.card-prospect-review .card-badge { background: rgba(99,102,241,0.18); color: #4338ca; }
+
+/* ── Prospect sequences awaiting review ── */
+.prospect-review-item {
+  background: rgba(255,255,255,0.6);
+  border-radius: 10px;
+  padding: 10px 14px;
+  border-left: 4px solid var(--a-prospect-review);
+  margin-bottom: 8px;
+}
+.prospect-review-item:last-child { margin-bottom: 0; }
+.prospect-review-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.prospect-review-name { font-size: 15px; font-weight: 600; color: #4338ca; text-decoration: none; }
+.prospect-review-name:hover { text-decoration: underline; }
+.prospect-review-meta { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
+.prospect-review-desc { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
 /* ── Prospect cards ── */
 .prospect-item {
   background: rgba(255,255,255,0.55);
@@ -396,6 +437,41 @@ header {
   line-height: 1.5;
 }
 
+/* ── Nudged contacts ── */
+.nudged-item {
+  background: rgba(255,255,255,0.55);
+  border-radius: 10px;
+  padding: 10px 14px;
+  border-left: 4px solid var(--a-nudged);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.nudged-item:last-child { margin-bottom: 0; }
+.nudged-name { font-size: 15px; font-weight: 600; color: var(--text); }
+.nudged-meta { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
+
+/* ── Belief to Break Through — kept soft and non-clinical on purpose ── */
+.belief-item {
+  background: rgba(255,255,255,0.6);
+  border-radius: 10px;
+  padding: 14px 16px;
+  border-left: 4px solid var(--a-belief);
+  margin-bottom: 10px;
+}
+.belief-item:last-child { margin-bottom: 0; }
+.belief-text {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-style: italic;
+  color: #5b2466;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
 /* ── Focus task list ── */
 .task-list { list-style:none; margin-top:14px; display:flex; flex-direction:column; gap:10px; }
 .task-list li { display:flex; align-items:flex-start; }
@@ -495,8 +571,8 @@ header {
   <div class="header-title">⚡ Focus</div>
   <div class="header-meta">
     <span class="pulse-dot"></span>
-    <span>2026-06-23 23:05</span>
-    <span class="header-label">evening</span>
+    <span>2026-06-24 06:22</span>
+    <span class="header-label">morning</span>
   </div>
 </header>
 
@@ -504,9 +580,9 @@ header {
 
   <!-- Greeting -->
   <div class="greeting-band">
-    <div class="greeting-time">Tuesday, June 23 · 11:05 PM</div>
-    <div class="greeting-text">Hey Gemma — late night, big energy. You've had a genuinely impressive day. Let's close it clean.</div>
-    <span class="activity-pill">🔍 Scripts folder had active file touches as late as 11:04 PM tonight — one file in motion, content not yet visible but clearly a live work session.</span>
+    <div class="greeting-time">Wednesday, June 24 · 06:22 AM</div>
+    <div class="greeting-text">Good morning, Gemma — it's 6:21 AM and you've already been building. Let's make this day count.</div>
+    <span class="activity-pill">🔍 Active file touches since 11 PM: Scripts (5 files, as recent as 6:21 AM), Ecosystems (1 file, 6:08 AM), and Prospects (9 files, 4:32 AM) — all three areas are live and in motion.</span>
   </div>
 
   <!-- Where you left off -->
@@ -515,7 +591,7 @@ header {
       <span class="card-title">📍 Where You Left Off</span>
       <span class="card-badge">Context</span>
     </div>
-    <p class="card-body">You were in the Scripts folder as recently as 11:04 PM tonight — something is actively in motion there. Earlier today you completed the Charlie Sells pre-call prep and marked the WhatsApp MCP work done. That MCP server is fully operational and sitting ready for its first real job.</p>
+    <p class="card-body">You were deep in Scripts, Ecosystems, and Prospects folders as recently as 4–6 AM — all three are active and being handled. The WhatsApp MCP server is stable and operational, which is a genuine engineering win you built from scratch. Suzanne Alexandra's appointment on the 26th needs to be updated — she rescheduled.</p>
   </div>
 
   <!-- Focus NOW -->
@@ -524,8 +600,8 @@ header {
       <span class="card-title">⚡ Focus Right Now</span>
       <span class="card-badge">💰 Money In Bank</span>
     </div>
-    <p class="card-body-large">Update Suzanne Alexandra's prospect folder right now — her June 26 appointment has changed and the automation needs to reflect that before it fires incorrectly.</p>
-    <ul class="task-list"><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk0" onchange="saveCheck(this)"><span class="task-text">Update Suzanne Alexandra's prospect folder — remove or reschedule the Jun 26 call so automation stays clean</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk1" onchange="saveCheck(this)"><span class="task-text">Note what you opened in Scripts tonight — either close it out or drop a one-line next step so nothing gets lost overnight</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk2" onchange="saveCheck(this)"><span class="task-text">Decide the first WhatsApp MCP use case (CRM sync, prospect pings, or Airtable?) — even a one-word note in the file is enough for now</span></label></li></ul>
+    <p class="card-body-large">Update Suzanne Alexandra's prospect folder right now to reflect the cancelled June 26th appointment — then you're clear to move into your Scripts and Ecosystems work with a clean slate.</p>
+    <ul class="task-list"><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk0" onchange="saveCheck(this)"><span class="task-text">Update Suzanne Alexandra's folder — remove or reschedule the Jun 26 call, note the change clearly</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk1" onchange="saveCheck(this)"><span class="task-text">Scripts folder had 5 files touched this morning — confirm what's open or in-progress and close out or log next step</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk2" onchange="saveCheck(this)"><span class="task-text">Charlie Sells call was yesterday — if notes or transcript exist, make sure prospect automation picks it up</span></label></li></ul>
   </div>
 
   <!-- WhatsApp -->
@@ -534,7 +610,7 @@ header {
       <span class="card-title">💬 WhatsApp — Needs Attention</span>
       <span class="card-badge">Inbox</span>
     </div>
-    <p class="card-body" style="margin-bottom:14px">Main activity across 4 active chats. Ojo Israel Pelumi is asking for $15 financial help for hospital bills — you acknowledged but deferred. A food/resource table was shared in the Gemma Serenity Gorokhoff chat. Ben Stallings had a quick call and light exchange. The Love/Happy/Fulfilled group had casual sharing of links and home temperature discussion.</p>
+    <p class="card-body" style="margin-bottom:14px">Several conversations active: Ojo Israel Pelumi is sick and unable to afford hospital bills, requesting $15 in financial help — you committed to sending something when able. A resource table for food/pet assistance in Maricopa was shared in a personal chat. Ben Stallings had a casual call exchange. Group chats had minimal or media-only activity.</p>
 <div class="whatsapp-needs-attention">
         <div class="whatsapp-item">
           <div class="whatsapp-header">
@@ -547,27 +623,21 @@ I would beg them to accept it so I can have good treatment</p>
           <div class="whatsapp-header">
             <span class="whatsapp-chat">Ojo Israel Pelumi</span>
           </div>
-          <p class="whatsapp-text">I trust you Mrs Gemma
-You can help❤️🤹</p>
-        </div>
-        <div class="whatsapp-item">
-          <div class="whatsapp-header">
-            <span class="whatsapp-chat">Ojo Israel Pelumi</span>
-          </div>
-          <p class="whatsapp-text">Thank you Mrs Gemma</p>
+          <p class="whatsapp-text">My God..... 
+As soon as I can send you something I will.</p>
         </div></div>
 <div class="whatsapp-followups"><div class="whatsapp-followups-label">Follow-ups</div>
         <div class="whatsapp-task">
           <span class="whatsapp-task-priority" style="background:#DC262620;color:#DC2626">high</span>
-          <span class="whatsapp-task-text">Follow up on promise to send $15 to Ojo Israel Pelumi for hospital bills when able — you said 'as soon as I can send you something I will'</span>
+          <span class="whatsapp-task-text">Follow up on promise to send $15 (or some amount) to Ojo Israel Pelumi for hospital bills when funds are available</span>
         </div>
         <div class="whatsapp-task">
           <span class="whatsapp-task-priority" style="background:#D9770620;color:#D97706">medium</span>
-          <span class="whatsapp-task-text">Review and act on the food/community resource table shared in personal chat (St. Mary's Food Bank, F.O.R. Maricopa, pet food pantries, etc.) — likely compiled for someone in need</span>
+          <span class="whatsapp-task-text">Check on Ojo Israel Pelumi's health recovery and confirm whether financial help was sent</span>
         </div>
         <div class="whatsapp-task">
           <span class="whatsapp-task-priority" style="background:#16A34A20;color:#16A34A">low</span>
-          <span class="whatsapp-task-text">Check in with Ben Stallings after the phone call to confirm everything is resolved</span>
+          <span class="whatsapp-task-text">Review and potentially act on the food/pet assistance resource table shared in personal chat (Gemma Serenity Gorokhoff)</span>
         </div></div>
   </div>
 
@@ -578,62 +648,73 @@ You can help❤️🤹</p>
       <span class="card-badge">Networking</span>
     </div>
     <div class="card-body linkedin-contacts">
-      <div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/alana-kayumi-4299b3214/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Alana Kayumi</a> <span class="linkedin-email">· alana@themia.world</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/aprilholle/" target="_blank" rel="noopener noreferrer" class="linkedin-link">April Holle</a> <span class="linkedin-email">· april@madebetterstudio.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/bendbarker/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Ben Barker</a> <span class="linkedin-email">· barker@promobiley.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/bradlett/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Brad Lett</a> <span class="linkedin-email">· bradlett@hotmail.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/brendapetrillo/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Brenda Petrillo</a> <span class="linkedin-email">· brenda@brendapetrillo.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/brianjbromberg/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Brian Bromberg</a> <span class="linkedin-email">· brianjbromberg25@gmail.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/briantalbott/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Brian Talbott</a> <span class="linkedin-email">· brian@talbottbookkeeping.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/business-book-ghostwriter-community-entrepreneur-carol-tice/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Carol Tice</a> <span class="linkedin-email">· carol@caroltice.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/charlie-sells/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Charlie Sells</a> <span class="linkedin-email">· charlie@clarityovereverything.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/cschneider27/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Chris Schneider</a> <span class="linkedin-email">· Chris@handshakedigital.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/ciara-anderson-58641b186/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Ciara Anderson</a> <span class="linkedin-email">· offbrandebyciara@gmail.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/dameshacraig/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Damesha Craig</a> <span class="linkedin-email">· damesha.craig@gmail.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/daniellectworek/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Danielle (Dani Cee) Tworek</a> <span class="linkedin-email">· danicee@happylifeagenda.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/attorney-marketing-solutions/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Desly Ndaya</a> <span class="linkedin-email">· deslyateke@gmail.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/hugh-perez-00bb00380/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Dube Perez</a> <span class="linkedin-email">· perezdube277@gmail.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/ekaterina-smirnova-san-diego/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Ekaterina Smirnova</a> <span class="linkedin-email">· kate.smirnova@ohmymail.net</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/farrah-faranak-noorbakhsh-reynolds/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Farrah Noorbakhsh Reynolds</a> <span class="linkedin-email">· radhafarrah@gmail.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/felixpetzel/" target="_blank" rel="noopener noreferrer" class="linkedin-link">felix petzel</a> <span class="linkedin-email">· info@panda-media.biz</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/flora-voelcker-918907197/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Flora Voelcker</a> <span class="linkedin-email">· info@voelckerdesign.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/gabriella-jones-540b97159/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Gabriella Jones</a> <span class="linkedin-email">· gajones@stansberryresearch.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/gemmaserenity/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Gemma Serenity Gorokhoff</a> <span class="linkedin-email">· gemma@prs.gemmmaserenity.com or gorokhoff.gemma@gmail.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/jeffbeale/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Jeff Beale</a> <span class="linkedin-email">· jeff@jeffbeale.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/jelenaostrovska/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Jelena Ostrovska</a> <span class="linkedin-email">· jelena@jelenaostrovska.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/jennica-blaubach/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Jennica Blaubach</a> <span class="linkedin-email">· Jen@everydayea.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/jblizzard/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Jim Blizzard</a> <span class="linkedin-email">· jblizzard@origamicsolutions.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/jim-butz-11553a12/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Jim Butz</a> <span class="linkedin-email">· jim@anuncier.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/joekovacs/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Joe Kovacs</a> <span class="linkedin-email">· joe@kovacscommunications.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/johntabeart/" target="_blank" rel="noopener noreferrer" class="linkedin-link">John Tabeart</a> <span class="linkedin-email">· john@trutina.ai</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/jori-oneale/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Jori O'Neale M.S.Ed.</a> <span class="linkedin-email">· jori@the1andonlypublishing.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/justin-wichterman/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Justin Wichterman</a> <span class="linkedin-email">· justin.wichterman@gmail.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/henhousepublishing/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Karen Smith</a> <span class="linkedin-email">· henhousepublishing@gmail.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/hallenkathy/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Kathy Hallen</a> <span class="linkedin-email">· kathy@mileyhallen.design</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/kaylie-yaceczko/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Kaylie Yaceczko</a> <span class="linkedin-email">· kaylie@redpointdigital.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/kevincarrillo/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Kevin Carrillo</a> <span class="linkedin-email">· kevin@kcconsulting.co</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/kimberly-bunker-mfa/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Kimberly Bunker, MFA</a> <span class="linkedin-email">· kbunker.1@alumni.nd.edu</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/kimberly-geschke-b787312a2/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Kimberly Geschke</a> <span class="linkedin-email">· kimberlygeschke@gmail.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/kristinholtshouser/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Kristin Holtshouser</a> <span class="linkedin-email">· ktajlili@gmail.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/that-lee-elliott/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Lee Elliott</a> <span class="linkedin-email">· lee@elliott.digital</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/lindseytlatham/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Lindsey Latham</a> <span class="linkedin-email">· Lindsey@ashevillepetpsychic.co.site</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/luqmaan-a-2a6474362//" target="_blank" rel="noopener noreferrer" class="linkedin-link">Luqmaan Agho</a> <span class="linkedin-email">· Hello@skillstackservices.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/marianlasalle/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Marian LaSalle</a> <span class="linkedin-email">· marian.lasalle@me.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/meghan-thomas-1883b545/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Meghan Thomas</a> <span class="linkedin-email">· mthomas@iridescestrategy.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/sayedanabilamahabub/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Nabila Mahabub</a> <span class="linkedin-email">· nabiladiya@gmail.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/o-nysha-thomas-6212a161/" target="_blank" rel="noopener noreferrer" class="linkedin-link">O'Nysha Thomas</a> <span class="linkedin-email">· ohnytho@gmail.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/robert-roth-entrepreneur/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Robert Roth</a> <span class="linkedin-email">· robert@robert-roth.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/ross-widenor-pmp-3523b655/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Ross Widenor, PMP</a> <span class="linkedin-email">· ross@widenorconsulting.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/sara-m-755225314/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Sara Mohib</a> <span class="linkedin-email">· saramohib321@gmail.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/alcohologist/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Scott Stevens</a> <span class="linkedin-email">· Scott@chicagorecoverycoach.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/sherrihinkel/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Sherri Griggs</a> <span class="linkedin-email">· sherri.balancedbody@gmail.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/stan-peresechansky-871a8229/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Stan Peresechansky</a> <span class="linkedin-email">· stan@stanalexander.design</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/suzannealexandra/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Suzanne Alexandra</a> <span class="linkedin-email">· suzanne.alexandra@gmail.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/tianna-osborne-1021b7377/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Tianna Osborne</a> <span class="linkedin-email">· info@tiannafunding.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/trentlapinski/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Trent Lapinsk</a> <span class="linkedin-email">· trent@productmarketerpro.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/troyvera/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Troy Vera</a> <span class="linkedin-email">· troy.vera@over-haul.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/tuvache-betton/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Tuvache Betton</a> <span class="linkedin-email">· admin@signaldaddymedia.com</span></span></div>
-<div class="linkedin-item"><span class="linkedin-name-link"><a href="https://www.linkedin.com/in/vincent-fatato/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Vincent Fatato</a> <span class="linkedin-email">· vfatato@greyboxcreative.com</span></span></div>
+      <div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-alana-kayumi" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/alana-kayumi-4299b3214/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Alana Kayumi</a> <span class="linkedin-email">· alana@themia.world</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-april-holle" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/aprilholle/" target="_blank" rel="noopener noreferrer" class="linkedin-link">April Holle</a> <span class="linkedin-email">· april@madebetterstudio.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-ben-barker" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/bendbarker/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Ben Barker</a> <span class="linkedin-email">· barker@promobiley.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-brad-lett" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/bradlett/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Brad Lett</a> <span class="linkedin-email">· bradlett@hotmail.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-brenda-petrillo" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/brendapetrillo/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Brenda Petrillo</a> <span class="linkedin-email">· brenda@brendapetrillo.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-brian-bromberg" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/brianjbromberg/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Brian Bromberg</a> <span class="linkedin-email">· brianjbromberg25@gmail.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-brian-talbott" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/briantalbott/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Brian Talbott</a> <span class="linkedin-email">· brian@talbottbookkeeping.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-carol-tice" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/business-book-ghostwriter-community-entrepreneur-carol-tice/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Carol Tice</a> <span class="linkedin-email">· carol@caroltice.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-charlie-sells" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/charlie-sells/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Charlie Sells</a> <span class="linkedin-email">· charlie@clarityovereverything.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-chris-schneider" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/cschneider27/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Chris Schneider</a> <span class="linkedin-email">· Chris@handshakedigital.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-ciara-anderson" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/ciara-anderson-58641b186/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Ciara Anderson</a> <span class="linkedin-email">· offbrandebyciara@gmail.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-damesha-craig" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/dameshacraig/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Damesha Craig</a> <span class="linkedin-email">· damesha.craig@gmail.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-danielle-dani-cee-tworek" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/daniellectworek/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Danielle (Dani Cee) Tworek</a> <span class="linkedin-email">· danicee@happylifeagenda.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-desly-ndaya" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/attorney-marketing-solutions/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Desly Ndaya</a> <span class="linkedin-email">· deslyateke@gmail.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-dube-perez" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/hugh-perez-00bb00380/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Dube Perez</a> <span class="linkedin-email">· perezdube277@gmail.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-ekaterina-smirnova" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/ekaterina-smirnova-san-diego/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Ekaterina Smirnova</a> <span class="linkedin-email">· kate.smirnova@ohmymail.net</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-farrah-noorbakhsh-reynolds" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/farrah-faranak-noorbakhsh-reynolds/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Farrah Noorbakhsh Reynolds</a> <span class="linkedin-email">· radhafarrah@gmail.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-felix-petzel" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/felixpetzel/" target="_blank" rel="noopener noreferrer" class="linkedin-link">felix petzel</a> <span class="linkedin-email">· info@panda-media.biz</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-flora-voelcker" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/flora-voelcker-918907197/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Flora Voelcker</a> <span class="linkedin-email">· info@voelckerdesign.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-gabriella-jones" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/gabriella-jones-540b97159/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Gabriella Jones</a> <span class="linkedin-email">· gajones@stansberryresearch.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-gemma-serenity-gorokhoff" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/gemmaserenity/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Gemma Serenity Gorokhoff</a> <span class="linkedin-email">· gemma@prs.gemmmaserenity.com or gorokhoff.gemma@gmail.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-jeff-beale" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/jeffbeale/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Jeff Beale</a> <span class="linkedin-email">· jeff@jeffbeale.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-jelena-ostrovska" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/jelenaostrovska/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Jelena Ostrovska</a> <span class="linkedin-email">· jelena@jelenaostrovska.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-jennica-blaubach" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/jennica-blaubach/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Jennica Blaubach</a> <span class="linkedin-email">· Jen@everydayea.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-jim-blizzard" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/jblizzard/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Jim Blizzard</a> <span class="linkedin-email">· jblizzard@origamicsolutions.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-jim-butz" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/jim-butz-11553a12/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Jim Butz</a> <span class="linkedin-email">· jim@anuncier.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-joe-kovacs" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/joekovacs/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Joe Kovacs</a> <span class="linkedin-email">· joe@kovacscommunications.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-john-tabeart" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/johntabeart/" target="_blank" rel="noopener noreferrer" class="linkedin-link">John Tabeart</a> <span class="linkedin-email">· john@trutina.ai</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-jori-o-neale-m-s-ed" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/jori-oneale/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Jori O'Neale M.S.Ed.</a> <span class="linkedin-email">· jori@the1andonlypublishing.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-justin-wichterman" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/justin-wichterman/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Justin Wichterman</a> <span class="linkedin-email">· justin.wichterman@gmail.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-karen-smith" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/henhousepublishing/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Karen Smith</a> <span class="linkedin-email">· henhousepublishing@gmail.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-kathy-hallen" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/hallenkathy/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Kathy Hallen</a> <span class="linkedin-email">· kathy@mileyhallen.design</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-kaylie-yaceczko" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/kaylie-yaceczko/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Kaylie Yaceczko</a> <span class="linkedin-email">· kaylie@redpointdigital.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-kevin-carrillo" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/kevincarrillo/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Kevin Carrillo</a> <span class="linkedin-email">· kevin@kcconsulting.co</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-kimberly-bunker-mfa" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/kimberly-bunker-mfa/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Kimberly Bunker, MFA</a> <span class="linkedin-email">· kbunker.1@alumni.nd.edu</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-kimberly-geschke" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/kimberly-geschke-b787312a2/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Kimberly Geschke</a> <span class="linkedin-email">· kimberlygeschke@gmail.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-kristin-holtshouser" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/kristinholtshouser/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Kristin Holtshouser</a> <span class="linkedin-email">· ktajlili@gmail.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-lee-elliott" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/that-lee-elliott/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Lee Elliott</a> <span class="linkedin-email">· lee@elliott.digital</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-lindsey-latham" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/lindseytlatham/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Lindsey Latham</a> <span class="linkedin-email">· Lindsey@ashevillepetpsychic.co.site</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-luqmaan-agho" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/luqmaan-a-2a6474362//" target="_blank" rel="noopener noreferrer" class="linkedin-link">Luqmaan Agho</a> <span class="linkedin-email">· Hello@skillstackservices.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-marian-lasalle" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/marianlasalle/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Marian LaSalle</a> <span class="linkedin-email">· marian.lasalle@me.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-meghan-thomas" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/meghan-thomas-1883b545/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Meghan Thomas</a> <span class="linkedin-email">· mthomas@iridescestrategy.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-nabila-mahabub" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/sayedanabilamahabub/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Nabila Mahabub</a> <span class="linkedin-email">· nabiladiya@gmail.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-o-nysha-thomas" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/o-nysha-thomas-6212a161/" target="_blank" rel="noopener noreferrer" class="linkedin-link">O'Nysha Thomas</a> <span class="linkedin-email">· ohnytho@gmail.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-robert-roth" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/robert-roth-entrepreneur/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Robert Roth</a> <span class="linkedin-email">· robert@robert-roth.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-ross-widenor-pmp" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/ross-widenor-pmp-3523b655/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Ross Widenor, PMP</a> <span class="linkedin-email">· ross@widenorconsulting.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-sara-mohib" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/sara-m-755225314/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Sara Mohib</a> <span class="linkedin-email">· saramohib321@gmail.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-scott-stevens" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/alcohologist/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Scott Stevens</a> <span class="linkedin-email">· Scott@chicagorecoverycoach.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-sherri-griggs" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/sherrihinkel/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Sherri Griggs</a> <span class="linkedin-email">· sherri.balancedbody@gmail.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-stan-peresechansky" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/stan-peresechansky-871a8229/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Stan Peresechansky</a> <span class="linkedin-email">· stan@stanalexander.design</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-suzanne-alexandra" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/suzannealexandra/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Suzanne Alexandra</a> <span class="linkedin-email">· suzanne.alexandra@gmail.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-tianna-osborne" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/tianna-osborne-1021b7377/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Tianna Osborne</a> <span class="linkedin-email">· info@tiannafunding.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-trent-lapinsk" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/trentlapinski/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Trent Lapinsk</a> <span class="linkedin-email">· trent@productmarketerpro.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-troy-vera" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/troyvera/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Troy Vera</a> <span class="linkedin-email">· troy.vera@over-haul.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-tuvache-betton" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/tuvache-betton/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Tuvache Betton</a> <span class="linkedin-email">· admin@signaldaddymedia.com</span></span></label></div>
+<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-vincent-fatato" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/vincent-fatato/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Vincent Fatato</a> <span class="linkedin-email">· vfatato@greyboxcreative.com</span></span></label></div>
+    </div>
+  </div>
+
+  <!-- Nudged -->
+  <div class="card card-nudged">
+    <div class="card-header">
+      <span class="card-title">🤝 Nudged</span>
+      <span class="card-badge">Following up</span>
+    </div>
+    <div class="card-body">
+      <p class='card-body' style='color:#666;font-style:italic'>No one nudged recently — check off a contact on the Passion Millionaire Connect list after you message them on LinkedIn, and they'll move here.</p>
     </div>
   </div>
 
@@ -655,7 +736,80 @@ You can help❤️🤹</p>
       <span class="card-title">🤝 Prospects Pipeline</span>
       <span class="card-badge">Revenue</span>
     </div>
-    <li>Charlie Sells was today — if that call happened, make sure your notes are logged and the transcript is queued. Brian Talbott and Meghan Thomas are both June 30 (one week). Mark Young is July 1. Your pipeline is active and moving — the next week is where you want clean follow-through. Suzanne Alexandra's reschedule needs to be reflected in her folder tonight.</li>
+    <p class="card-body" style="margin-bottom:10px;font-style:italic">Lead with Brian Talbott and Meghan Thomas — both land June 30, which is 6 days out, so precall prep starts now.</p>
+    
+        <div class="prospect-item">
+          <div class="prospect-header">
+            <span class="prospect-name">Charlie Sells</span>
+            <span class="prospect-status" style="background:#3B82F620;color:#3B82F6">Jun 23 · Yesterday</span>
+          </div>
+          <span class="prospect-meta">11:00 AM (America/Phoenix) · charlie@clarityovereverything.com</span>
+          <p class="prospect-summary">PRE-CALL BRIEF: Charlie Sells | Tuesday, June 23, 2026</p>
+          
+        </div>
+
+        <div class="prospect-item">
+          <div class="prospect-header">
+            <span class="prospect-name">Brian Talbott</span>
+            <span class="prospect-status" style="background:#10B98120;color:#10B981">Jun 30 · in 6 days</span>
+          </div>
+          <span class="prospect-meta">4:00 PM (America/Phoenix) · brian@talbottbookkeeping.com</span>
+          
+          
+        </div>
+
+        <div class="prospect-item">
+          <div class="prospect-header">
+            <span class="prospect-name">Meghan Thomas</span>
+            <span class="prospect-status" style="background:#10B98120;color:#10B981">Jun 30 · in 6 days</span>
+          </div>
+          <span class="prospect-meta">11:00 AM (America/Phoenix) · mthomas@iridescestrategy.com</span>
+          
+          
+        </div>
+
+        <div class="prospect-item">
+          <div class="prospect-header">
+            <span class="prospect-name">Mark Young</span>
+            <span class="prospect-status" style="background:#10B98120;color:#10B981">Jul 01 · in 7 days</span>
+          </div>
+          <span class="prospect-meta">10:30 AM (America/Phoenix) · markyoung@luos-foundation.co.uk</span>
+          
+          
+        </div>
+
+        <div class="prospect-item">
+          <div class="prospect-header">
+            <span class="prospect-name">Joe Kovacs</span>
+            <span class="prospect-status" style="background:#10B98120;color:#10B981">Jul 22 · in 28 days</span>
+          </div>
+          <span class="prospect-meta">11:30 AM (America/Phoenix) · joe@kovacscommunications.com</span>
+          <p class="prospect-summary">Email: joe@kovacscommunications.com</p>
+          <ul class="prospect-nextsteps"><li>The speakers agreed to reschedule for a follow-up call on July 22nd to allow the Maryland speaker ti</li><li>They exchanged contact information to facilitate future communication and potential collaboration.</li><li>name Gemma or Hemma.</li></ul>
+        </div>
+  </div>
+
+  <!-- Prospect Sequences Awaiting Review -->
+  <div class="card card-prospect-review">
+    <div class="card-header">
+      <span class="card-title">📬 Prospect Sequences Awaiting Review</span>
+      <span class="card-badge">Mailer drafts</span>
+    </div>
+    <div class="prospect-review-item"><div class="prospect-review-main"><a href="https://mailer.gemmaserenity.com/sequences/0391d11d-61c9-4b2c-8784-26bc65c54981" target="_blank" rel="noopener noreferrer" class="prospect-review-name">Jim Butz — Follow-up Sequence (2026-06-21)</a><span class="prospect-review-meta">drafted 2d ago</span></div><div class="prospect-review-desc">Gemma and Jim connected through Robert's Passion Millionaire Network, both recruited by Joy after initially declining multiple times. Jim ru</div></div>
+<div class="prospect-review-item"><div class="prospect-review-main"><a href="https://mailer.gemmaserenity.com/sequences/eda3bb35-421b-447c-9084-7c11e53fc9e7" target="_blank" rel="noopener noreferrer" class="prospect-review-name">Marco Joubert — Follow-up Sequence (2026-06-21)</a><span class="prospect-review-meta">drafted 2d ago</span></div><div class="prospect-review-desc">Marco reached out to explore a sales partnership after a previous attempt to collaborate through a third-party company (Black Sky) fell thro</div></div>
+<div class="prospect-review-item"><div class="prospect-review-main"><a href="https://mailer.gemmaserenity.com/sequences/edcb6c31-78cc-463b-86f0-060f3e54d92b" target="_blank" rel="noopener noreferrer" class="prospect-review-name">Deborah Dubree — Follow-up Sequence (2026-06-21)</a><span class="prospect-review-meta">drafted 2d ago</span></div><div class="prospect-review-desc">Gemma and Deborah had a candid, supportive call focused on Gemma's current financial urgency and immediate revenue strategy. Deborah strongl</div></div>
+<div class="prospect-review-item"><div class="prospect-review-main"><a href="https://mailer.gemmaserenity.com/sequences/6d6cba73-0ddf-49a3-986d-396711cb2506" target="_blank" rel="noopener noreferrer" class="prospect-review-name">Kimberly Bunker — Follow-up Sequence (2026-06-21)</a><span class="prospect-review-meta">drafted 2d ago</span></div><div class="prospect-review-desc">Gemma and Kimberly had a deeply authentic first connection, sharing personal stories of resilience, domestic violence survival, and professi</div></div>
+<div class="prospect-review-item"><div class="prospect-review-main"><a href="https://mailer.gemmaserenity.com/sequences/324adf82-4082-4958-99b3-18fff7ae36ec" target="_blank" rel="noopener noreferrer" class="prospect-review-name">Vincent Fatato — Follow-up Sequence (2026-06-21)</a><span class="prospect-review-meta">drafted 2d ago</span></div><div class="prospect-review-desc">Met Vincent Fatato (Gray Box, branding/web design/maintenance) through a networking call. He is already experimenting with Claude and immedi</div></div>
+<div class="prospect-review-item"><div class="prospect-review-main"><a href="https://mailer.gemmaserenity.com/sequences/f4ee15e5-0138-4fe9-82b8-d750d095f56d" target="_blank" rel="noopener noreferrer" class="prospect-review-name">Monica Pineda — Follow-up Sequence (2026-06-21)</a><span class="prospect-review-meta">drafted 2d ago</span></div><div class="prospect-review-desc">Gemma and Monica had a strategy session to formalize their collaboration, covering website/app hosting, AI agent implementation, SEO integra</div></div>
+<div class="prospect-review-item"><div class="prospect-review-main"><a href="https://mailer.gemmaserenity.com/sequences/cc340745-a0d5-4217-83eb-c87e145e4969" target="_blank" rel="noopener noreferrer" class="prospect-review-name">Edit B Kiss — Follow-up Sequence (2026-06-21)</a><span class="prospect-review-meta">drafted 2d ago</span></div><div class="prospect-review-desc">Edit and Gemma reconnected to discuss Edit's vision for a unique spiritual healing app (karmic debt release, ancestral healing, source memor</div></div>
+<div class="prospect-review-item"><div class="prospect-review-main"><a href="https://mailer.gemmaserenity.com/sequences/7dbb201f-9585-4874-9e90-05c54c78a6ed" target="_blank" rel="noopener noreferrer" class="prospect-review-name">Dave Blackledge — Follow-up Sequence (2026-06-21)</a><span class="prospect-review-meta">drafted 2d ago</span></div><div class="prospect-review-desc">Gemma and Sascha reconnected with David Blackledge, a 12-year GCU veteran, after a devastating March 2026 crisis where Gemma's mentally ill </div></div>
+<div class="prospect-review-item"><div class="prospect-review-main"><a href="https://mailer.gemmaserenity.com/sequences/ba2a9281-1bc1-4290-ac5d-daf109860da0" target="_blank" rel="noopener noreferrer" class="prospect-review-name">Joe Kovacs — Follow-up Sequence (2026-06-21)</a><span class="prospect-review-meta">drafted 2d ago</span></div><div class="prospect-review-desc">Joe Kovac (Maryland, near DC) and Gemma connected through Robert Roth's network. Joe is an 18-month-old marketing and communications consult</div></div>
+<div class="prospect-review-item"><div class="prospect-review-main"><a href="https://mailer.gemmaserenity.com/sequences/d9b63e06-c876-46f8-81c8-c1754da2d804" target="_blank" rel="noopener noreferrer" class="prospect-review-name">Kaylie Yaceczko — Follow-up Sequence (2026-06-21)</a><span class="prospect-review-meta">drafted 2d ago</span></div><div class="prospect-review-desc">Gemma connected with Kaylie Yaceczko, an award-winning motion graphics and 3D animation specialist who is also incoming president of her Ame</div></div>
+<div class="prospect-review-item"><div class="prospect-review-main"><a href="https://mailer.gemmaserenity.com/sequences/43268d1c-2ae0-4ecd-8ef7-1d11a33b5f50" target="_blank" rel="noopener noreferrer" class="prospect-review-name">Suzanne Alexandra — Follow-up Sequence (2026-06-21)</a><span class="prospect-review-meta">drafted 2d ago</span></div><div class="prospect-review-desc">Gemma connected with Suzanne Alexandra, a Silicon Valley AI/UX designer recently laid off from Meta, who has a childhood dream of becoming a</div></div>
+<div class="prospect-review-item"><div class="prospect-review-main"><a href="https://mailer.gemmaserenity.com/sequences/94302daa-43f2-4f5a-8aae-7296e84ad192" target="_blank" rel="noopener noreferrer" class="prospect-review-name">Jeff Beale — Follow-up Sequence (2026-06-21)</a><span class="prospect-review-meta">drafted 2d ago</span></div><div class="prospect-review-desc">Jeff Beale (Mr. Marketology) and Gemma had a high-energy first call where they discovered strong complementary services: Jeff runs executive</div></div>
+<div class="prospect-review-item"><div class="prospect-review-main"><a href="https://mailer.gemmaserenity.com/sequences/c4789084-5bb8-4f7b-ace7-f87dcfb5489e" target="_blank" rel="noopener noreferrer" class="prospect-review-name">Walter Dobyne — Follow-up Sequence (2026-06-24)</a><span class="prospect-review-meta">drafted today</span></div><div class="prospect-review-desc">To: capfinancial34@gmail.com</div></div>
+<div class="prospect-review-item"><div class="prospect-review-main"><a href="https://mailer.gemmaserenity.com/sequences/40ba4a2e-6802-43c0-aaa3-7c73fc064788" target="_blank" rel="noopener noreferrer" class="prospect-review-name">Chris Schneider — Follow-up Sequence (2026-06-24)</a><span class="prospect-review-meta">drafted today</span></div><div class="prospect-review-desc">To: chris@handshakedigital.com</div></div>
+<div class="prospect-review-item"><div class="prospect-review-main"><a href="https://mailer.gemmaserenity.com/sequences/58517300-c9c5-4673-abe5-063bdf343d4e" target="_blank" rel="noopener noreferrer" class="prospect-review-name">Eric Twohey — Follow-up Sequence (2026-06-24)</a><span class="prospect-review-meta">drafted today</span></div><div class="prospect-review-desc">To: eric@uncorkedmediagroup.com</div></div>
   </div>
 
   <!-- Wellness -->
@@ -664,7 +818,7 @@ You can help❤️🤹</p>
       <span class="card-title">💧 Body Check</span>
       <span class="card-badge">Non-Negotiable</span>
     </div>
-    <p class="card-body">It's after 11 PM — drink a full glass of water before you do anything else, and if you have an evening med or supplement, take it now while you're reading this.</p>
+    <p class="card-body">Water first, meds second — before anything else hits your plate this morning. You've been up since at least 3 AM, so hydration is not optional right now. 💙</p>
   </div>
 
   
@@ -673,7 +827,7 @@ You can help❤️🤹</p>
           <span class="card-title">💡 New Idea — Parked</span>
           <span class="card-badge">Vision Filter</span>
         </div>
-        <p class="card-body">Limiting belief reframe logged in focus notes (everyone can pay thousands USD easily) — worth revisiting as a messaging or sales framing angle. Parked for Vision Filter.</p>
+        <p class="card-body">3 AM mindset note about high-ticket belief reframe — strong energy there. Parked for Vision Filter: could become a sales framework or internal calibration tool for prospect conversations.</p>
       </div>
 
   <!-- Encouragement -->
@@ -681,7 +835,25 @@ You can help❤️🤹</p>
     <div class="card-header" style="justify-content:center">
       <span class="card-title">✦ You've Got This</span>
     </div>
-    <p class="card-body-large">"You built a fully private, fully local WhatsApp automation server from scratch today — that's real engineering sovereignty, and it's now a foundation you can stack revenue-generating automations on top of."</p>
+    <p class="card-body-large">"You built a fully local, fully private WhatsApp automation server from the ground up — that's not a tutorial win, that's an infrastructure win, and it's yours forever."</p>
+  </div>
+
+  <!-- From Your Notes -->
+  <div class="card card-notes">
+    <div class="card-header">
+      <span class="card-title">📝 From Your Notes</span>
+      <span class="card-badge">Pulled from logs</span>
+    </div>
+    <p class='card-body' style='color:#666;font-style:italic'>Nothing pulled from your notes right now.</p>
+  </div>
+
+  <!-- Belief to Break Through -->
+  <div class="card card-belief">
+    <div class="card-header">
+      <span class="card-title">💛 Belief to Break Through</span>
+      <span class="card-badge">Just between us</span>
+    </div>
+    <p class='card-body' style='color:#666;font-style:italic'>Nothing here right now — this card only fills in if something you write reads like a limiting belief, so you can come back and move through it.</p>
   </div>
 
   <!-- Log what you did -->
@@ -696,7 +868,7 @@ You can help❤️🤹</p>
     <div class="log-status" id="log-status"></div>
   </div>
 
-  <div class="footer">Generated 2026-06-23 23:05 · scanning since Jun 23 · 10:27 PM · focus.gemmaserenity.com</div>
+  <div class="footer">Generated 2026-06-24 06:22 · scanning since Jun 23 · 11:05 PM · focus.gemmaserenity.com</div>
 
 </div>
 
@@ -749,7 +921,7 @@ async function submitLog() {
       body: JSON.stringify({
         text:            text,
         timestamp:       new Date().toISOString(),
-        briefing_label:  'evening'
+        briefing_label:  'morning'
       })
     });
     if (resp.ok) {
