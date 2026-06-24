@@ -30,6 +30,7 @@
   --c-calendar: #E3F6FF;   --a-calendar: #0EA5E9;
   --c-prospects:#E8FFF5;   --a-prospects:#10B981;
   --c-linkedin: #E8F5FF;   --a-linkedin: #0EA5E9;
+  --c-whatsapp: #E7F9EF;   --a-whatsapp: #25D366;
   --c-wellness: #F0FFF4;   --a-wellness: #22C55E;
   --c-ideas:    #F5F0FF;   --a-ideas:    #8B5CF6;
   --c-log:      #FFF9E6;   --a-log:      #EAB308;
@@ -215,6 +216,10 @@ header {
 .card-linkedin { background: var(--c-linkedin); border-color: var(--a-linkedin); }
 .card-linkedin .card-title { color: var(--a-linkedin); }
 
+.card-whatsapp { background: var(--c-whatsapp); border-color: var(--a-whatsapp); }
+.card-whatsapp .card-title { color: #1c8a4b; }
+.card-whatsapp .card-badge { background: rgba(37,211,102,0.18); color: #1c8a4b; }
+
 .card-wellness { background: var(--c-wellness);  border-color: var(--a-wellness); }
 .card-wellness .card-title { color: var(--a-wellness); }
 
@@ -334,6 +339,63 @@ header {
   color: var(--text-muted);
 }
 
+/* ── WhatsApp ── */
+.whatsapp-needs-attention {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.whatsapp-item {
+  background: rgba(255,255,255,0.55);
+  border-radius: 10px;
+  border-left: 4px solid var(--a-whatsapp);
+  padding: 10px 14px;
+}
+.whatsapp-header { margin-bottom: 3px; }
+.whatsapp-chat {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1c8a4b;
+}
+.whatsapp-text {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+.whatsapp-followups {
+  margin-top: 14px;
+}
+.whatsapp-followups-label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.whatsapp-task {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 0;
+}
+.whatsapp-task-priority {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+  margin-top: 1px;
+}
+.whatsapp-task-text {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
 /* ── Focus task list ── */
 .task-list { list-style:none; margin-top:14px; display:flex; flex-direction:column; gap:10px; }
 .task-list li { display:flex; align-items:flex-start; }
@@ -433,7 +495,7 @@ header {
   <div class="header-title">⚡ Focus</div>
   <div class="header-meta">
     <span class="pulse-dot"></span>
-    <span>2026-06-23 17:00</span>
+    <span>2026-06-23 22:27</span>
     <span class="header-label">evening</span>
   </div>
 </header>
@@ -442,9 +504,9 @@ header {
 
   <!-- Greeting -->
   <div class="greeting-band">
-    <div class="greeting-time">Tuesday, June 23 · 05:00 PM</div>
-    <div class="greeting-text">Hey Gemma — it's 5 PM and you've had a genuinely impressive day. Let's close it clean.</div>
-    <span class="activity-pill">🔍 Scripts folder had 2 files touched as recently as 5:00 PM today — active work in progress.</span>
+    <div class="greeting-time">Tuesday, June 23 · 10:27 PM</div>
+    <div class="greeting-text">Hey Gemma — it's late and you've had a full day. Let's get you clear and set you down easy. 🌙</div>
+    <span class="activity-pill">🔍 Scripts folder (3 files) and sessions-notes (1 file) both touched at 10:26 PM tonight — active work confirmed, no orphaned tasks detected in those folders.</span>
   </div>
 
   <!-- Where you left off -->
@@ -453,7 +515,7 @@ header {
       <span class="card-title">📍 Where You Left Off</span>
       <span class="card-badge">Context</span>
     </div>
-    <p class="card-body">You were in the Scripts folder as recently as 5:00 PM today — something is actively in motion there. The WhatsApp MCP server is fully operational and stable, which is a real infrastructure win. Charlie Sells was your call today and the precall brief was reviewed and ready.</p>
+    <p class="card-body">You wrapped a solid evening in the Scripts folder and sessions-notes — those are active and touched as of 10:26 PM tonight. Your WhatsApp MCP server is stable and operational, which is a genuine engineering win. The focus log captured two important notes: a mindset shift around high-ticket belief work, and a Suzanne Alexandra calendar update.</p>
   </div>
 
   <!-- Focus NOW -->
@@ -462,8 +524,49 @@ header {
       <span class="card-title">⚡ Focus Right Now</span>
       <span class="card-badge">💰 Money In Bank</span>
     </div>
-    <p class="card-body-large">Charlie Sells was TODAY — if that call happened, log your notes now and make sure the transcript is queued for the prospect automation before it gets stale.</p>
-    <ul class="task-list"><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk0" onchange="saveCheck(this)"><span class="task-text">Log Charlie Sells call notes and confirm prospect automation has the transcript</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk1" onchange="saveCheck(this)"><span class="task-text">Check what you were working on in Scripts at 5 PM — close it out or note the next step</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk2" onchange="saveCheck(this)"><span class="task-text">Prep Suzanne Alexandra: her brief is AI-READY but the LinkedIn DM thread is still missing — paste it into her folder and re-run the precall script (call is Friday Jun 26)</span></label></li></ul>
+    <p class="card-body-large">Update Suzanne Alexandra's prospect folder right now to reflect her rescheduled appointment — she's no longer on June 26. One minute, done.</p>
+    <ul class="task-list"><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk0" onchange="saveCheck(this)"><span class="task-text">Move Suzanne Alexandra's appointment off June 26 in her prospect folder — she rescheduled, log it now before it gets stale</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk1" onchange="saveCheck(this)"><span class="task-text">Charlie Sells call was TODAY (Jun 23) — if the call happened, make sure your notes are logged and the transcript is queued for prospect automation</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk2" onchange="saveCheck(this)"><span class="task-text">Tomorrow Wed Jun 24: food delivery at 6 AM — set an alarm if you haven't already so you're awake to receive it</span></label></li></ul>
+  </div>
+
+  <!-- WhatsApp -->
+  <div class="card card-whatsapp">
+    <div class="card-header">
+      <span class="card-title">💬 WhatsApp — Needs Attention</span>
+      <span class="card-badge">Inbox</span>
+    </div>
+    <p class="card-body" style="margin-bottom:14px">Main activity across a few chats: Ojo Israel Pelumi is asking for $15 financial help for hospital bills; a group chat had discussions about Claude AI, food, and home temperature; a resource table for food/pet assistance was sent to Gemma Gorokhoff; Ben Stallings had a brief call exchange.</p>
+<div class="whatsapp-needs-attention">
+        <div class="whatsapp-item">
+          <div class="whatsapp-header">
+            <span class="whatsapp-chat">Ojo Israel Pelumi</span>
+          </div>
+          <p class="whatsapp-text">$15 will still be manageable 
+I would beg them to accept it so I can have good treatment</p>
+        </div>
+        <div class="whatsapp-item">
+          <div class="whatsapp-header">
+            <span class="whatsapp-chat">Ojo Israel Pelumi</span>
+          </div>
+          <p class="whatsapp-text">I trust you Mrs Gemma
+You can help❤️🤹</p>
+        </div></div>
+<div class="whatsapp-followups"><div class="whatsapp-followups-label">Follow-ups</div>
+        <div class="whatsapp-task">
+          <span class="whatsapp-task-priority" style="background:#DC262620;color:#DC2626">high</span>
+          <span class="whatsapp-task-text">Follow up on promise to send $15 to Ojo Israel Pelumi for hospital bills when funds are available</span>
+        </div>
+        <div class="whatsapp-task">
+          <span class="whatsapp-task-priority" style="background:#D9770620;color:#D97706">medium</span>
+          <span class="whatsapp-task-text">Check in on Ojo Israel Pelumi's health and recovery progress</span>
+        </div>
+        <div class="whatsapp-task">
+          <span class="whatsapp-task-priority" style="background:#D9770620;color:#D97706">medium</span>
+          <span class="whatsapp-task-text">Confirm Gemma Gorokhoff received and reviewed the food/pet assistance resource table</span>
+        </div>
+        <div class="whatsapp-task">
+          <span class="whatsapp-task-priority" style="background:#16A34A20;color:#16A34A">low</span>
+          <span class="whatsapp-task-text">Follow up with Ben Stallings after phone call to ensure everything is resolved</span>
+        </div></div>
   </div>
 
   <!-- Passion Millionaire Connect -->
@@ -550,7 +653,7 @@ header {
       <span class="card-title">🤝 Prospects Pipeline</span>
       <span class="card-badge">Revenue</span>
     </div>
-    <li>Charlie Sells — call was TODAY, needs log. Suzanne Alexandra is Friday Jun 26 — brief is ready, just needs her LinkedIn DM thread to fully power it up. Brian Talbott and Meghan Thomas are both June 30, one week out — worth a quick check that their folders have what they need. Mark Young is July 1.</li>
+    <li>Charlie Sells was TODAY — confirm whether the call happened and get notes logged. Eric Twohey was yesterday (Jun 22) — trust the automation on that one. Suzanne Alexandra needs her date updated in her folder (no longer Jun 26). Next live prospect on the horizon: Brian Talbott and Meghan Thomas both on Jun 30, then Mark Young on Jul 1. Pipeline is full — you're doing it.</li>
   </div>
 
   <!-- Wellness -->
@@ -559,7 +662,7 @@ header {
       <span class="card-title">💧 Body Check</span>
       <span class="card-badge">Non-Negotiable</span>
     </div>
-    <p class="card-body">End-of-day check: water, meds, and a real meal before you go back to the screen tonight. You built something serious today — your body carried you here.</p>
+    <p class="card-body">It's almost 10:30 PM — have you had water in the last hour? Grab a glass now, and double-check any evening meds before you wind down. You deserve a clean, restful night. 💙</p>
   </div>
 
   
@@ -568,7 +671,7 @@ header {
           <span class="card-title">💡 New Idea — Parked</span>
           <span class="card-badge">Vision Filter</span>
         </div>
-        <p class="card-body">Strategic Vision Filter (timesheet.md) — the backlog scoring exercise against vision / needle / money criteria is queued and unstarted. Parked for Vision Filter session when the timing is right.</p>
+        <p class="card-body">Focus log entry from tonight flagged a core belief reframe around high-ticket pricing — 'everybody can pay me thousands USD easily and effortlessly.' This is worth a dedicated mindset + offer positioning session. Parked for Vision Filter review.</p>
       </div>
 
   <!-- Encouragement -->
@@ -576,7 +679,7 @@ header {
     <div class="card-header" style="justify-content:center">
       <span class="card-title">✦ You've Got This</span>
     </div>
-    <p class="card-body-large">"You shipped a fully local, fully private WhatsApp MCP server from scratch today — that's not a tutorial win, that's infrastructure sovereignty, and it's going to compound fast."</p>
+    <p class="card-body-large">"You built a fully local, fully private WhatsApp automation server from scratch — that's not a tutorial win, that's an infrastructure win, and it belongs to you completely."</p>
   </div>
 
   <!-- Log what you did -->
@@ -591,7 +694,7 @@ header {
     <div class="log-status" id="log-status"></div>
   </div>
 
-  <div class="footer">Generated 2026-06-23 17:00 · scanning since Jun 23 · 02:57 PM · focus.gemmaserenity.com</div>
+  <div class="footer">Generated 2026-06-23 22:27 · scanning since Jun 23 · 05:00 PM · focus.gemmaserenity.com</div>
 
 </div>
 
