@@ -154,6 +154,13 @@ header {
   padding: 20px 22px;
   border: 2px solid transparent;
   transition: transform 0.12s, box-shadow 0.12s;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.card * {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .card:hover {
   transform: translateY(-2px);
@@ -571,7 +578,7 @@ header {
   <div class="header-title">⚡ Focus</div>
   <div class="header-meta">
     <span class="pulse-dot"></span>
-    <span>2026-06-25 17:56</span>
+    <span>2026-06-25 18:25</span>
     <span class="header-label">evening</span>
   </div>
 </header>
@@ -580,9 +587,9 @@ header {
 
   <!-- Greeting -->
   <div class="greeting-band">
-    <div class="greeting-time">Thursday, June 25 · 05:56 PM</div>
-    <div class="greeting-text">Good evening, Gemma 🌙 You've had a genuinely productive day — let's close it clean.</div>
-    <span class="activity-pill">🔍 Scripts folder had 4 files touched as recently as 5:55 PM today — active work in progress, no action needed unless output requires a decision.</span>
+    <div class="greeting-time">Thursday, June 25 · 06:25 PM</div>
+    <div class="greeting-text">Good evening, Gemma 🌙 You've had a genuinely productive day — here's where things stand.</div>
+    <span class="activity-pill">🔍 Active file touches in Scripts (3 files), sessions-notes, and focus folder all within the last 30 minutes — current work is live and moving.</span>
   </div>
 
   <!-- Where you left off -->
@@ -591,7 +598,7 @@ header {
       <span class="card-title">📍 Where You Left Off</span>
       <span class="card-badge">Context</span>
     </div>
-    <p class="card-body">Sovereign OS is installed and running as a standalone desktop app — that's a real milestone. This evening the Scripts folder is showing live activity as of 5:55 PM, so something is actively in motion there. The two items from the morning focus file (Supabase keepalive for WinWin + TMQ vault wiring confirmation) are marked done.</p>
+    <p class="card-body">Scripts folder saw active touches just minutes ago (06:24 PM), so that work is live and in progress. Sovereign OS is installed, running, and pinned to your taskbar — v1.0.0 is real and launched. The WinWin keepalive and TMQ vault wiring were both marked complete earlier today.</p>
   </div>
 
   <!-- Focus NOW -->
@@ -600,8 +607,8 @@ header {
       <span class="card-title">⚡ Focus Right Now</span>
       <span class="card-badge">💰 Money In Bank</span>
     </div>
-    <p class="card-body-large">Wire the first live tool panel inside Sovereign OS — the pre-call and post-call script panel is the logical first tool since you have two prospect calls Friday morning. That makes it immediately useful and revenue-adjacent.</p>
-    <ul class="task-list"><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk0" onchange="saveCheck(this)"><span class="task-text">Wire the pre-call/post-call script tool panel inside Sovereign OS at E:\sovereign-os — first live tool, use it for tomorrow's calls</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk1" onchange="saveCheck(this)"><span class="task-text">TMQ vault membership area — now that wiring status is confirmed, identify the single next action to move it toward live (this is direct course revenue sitting unfinished)</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk2" onchange="saveCheck(this)"><span class="task-text">Review Scripts folder output before bed — active edits are happening right now, make sure nothing needs a decision tonight</span></label></li></ul>
+    <p class="card-body-large">Your Scripts folder is the hottest file right now — whatever you're building there, finish that thread before you close for the night.</p>
+    <ul class="task-list"><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk0" onchange="saveCheck(this)"><span class="task-text">Wrap the active Scripts work — files touched at 06:24 PM, you're clearly mid-flow</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk1" onchange="saveCheck(this)"><span class="task-text">Wire the first live tool panel inside Sovereign OS (pre-call/post-call script + focus briefing with WhatsApp MCP) — this is the next concrete build step</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk2" onchange="saveCheck(this)"><span class="task-text">TMQ vault membership area — confirmed as a revenue asset; now that keepalive is handled, get the wiring scoped so it's ready to build next session</span></label></li></ul>
   </div>
 
   <!-- WhatsApp -->
@@ -689,7 +696,6 @@ header {
 <div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-kevin-carrillo" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/kevincarrillo/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Kevin Carrillo</a> <span class="linkedin-email">· kevin@kcconsulting.co</span></span></label></div>
 <div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-kimberly-bunker-mfa" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/kimberly-bunker-mfa/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Kimberly Bunker, MFA</a> <span class="linkedin-email">· kbunker.1@alumni.nd.edu</span></span></label></div>
 <div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-kimberly-geschke" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/kimberly-geschke-b787312a2/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Kimberly Geschke</a> <span class="linkedin-email">· kimberlygeschke@gmail.com</span></span></label></div>
-<div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-kristin-holtshouser" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/kristinholtshouser/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Kristin Holtshouser</a> <span class="linkedin-email">· ktajlili@gmail.com</span></span></label></div>
 <div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-lee-elliott" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/that-lee-elliott/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Lee Elliott</a> <span class="linkedin-email">· lee@elliott.digital</span></span></label></div>
 <div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-lindsey-latham" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/lindseytlatham/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Lindsey Latham</a> <span class="linkedin-email">· Lindsey@ashevillepetpsychic.co.site</span></span></label></div>
 <div class="linkedin-item"><label class="task-label"><input type="checkbox" class="task-check-input" id="pmc-luqmaan-agho" onchange="saveCheck(this)"><span class="linkedin-name-link task-text"><a href="https://www.linkedin.com/in/luqmaan-a-2a6474362//" target="_blank" rel="noopener noreferrer" class="linkedin-link">Luqmaan Agho</a> <span class="linkedin-email">· Hello@skillstackservices.com</span></span></label></div>
@@ -725,6 +731,7 @@ header {
 <div class="nudged-item"><span class="nudged-name">Charlie Sells</span><span class="nudged-meta">nudged 1d ago · resurfaces in 2d</span></div>
 <div class="nudged-item"><span class="nudged-name">Dube Perez</span><span class="nudged-meta">nudged 1d ago · resurfaces in 2d</span></div>
 <div class="nudged-item"><span class="nudged-name">Gemma Serenity Gorokhoff</span><span class="nudged-meta">nudged 1d ago · resurfaces in 2d</span></div>
+<div class="nudged-item"><span class="nudged-name">Kristin Holtshouser</span><span class="nudged-meta">nudged today · resurfaces in 3d</span></div>
 <div class="nudged-item"><span class="nudged-name">Meghan Thomas</span><span class="nudged-meta">nudged 1d ago · resurfaces in 2d</span></div>
 <div class="nudged-item"><span class="nudged-name">Robert Roth</span><span class="nudged-meta">nudged 1d ago · resurfaces in 2d</span></div>
 <div class="nudged-item"><span class="nudged-name">Suzanne Alexandra</span><span class="nudged-meta">nudged 1d ago · resurfaces in 2d</span></div>
@@ -749,7 +756,7 @@ header {
       <span class="card-title">🤝 Prospects Pipeline</span>
       <span class="card-badge">Revenue</span>
     </div>
-    <p class="card-body" style="margin-bottom:10px;font-style:italic">Lead with Brian Talbott for prep — he's 5 days out and bookkeeping/finance-adjacent which aligns tightly with your current infrastructure build.</p>
+    <p class="card-body" style="margin-bottom:10px;font-style:italic">Lead with Brian Talbott or Meghan Thomas — both land June 30, just 5 days out, so confirm or prep those conversations this week.</p>
     
         <div class="prospect-item">
           <div class="prospect-header">
@@ -798,7 +805,7 @@ header {
       <span class="card-title">📬 Prospect Sequences Awaiting Review</span>
       <span class="card-badge">Mailer drafts</span>
     </div>
-    <div class="prospect-review-item"><div class="prospect-review-main"><a href="https://mailer.gemmaserenity.com/sequences/0391d11d-61c9-4b2c-8784-26bc65c54981" target="_blank" rel="noopener noreferrer" class="prospect-review-name">Jim Butz — Follow-up Sequence (2026-06-21)</a><span class="prospect-review-meta">drafted 3d ago</span></div><div class="prospect-review-desc">Gemma and Jim connected through Robert's Passion Millionaire Network, both recruited by Joy after initially declining multiple times. Jim ru</div></div>
+    <div class="prospect-review-item"><div class="prospect-review-main"><a href="https://mailer.gemmaserenity.com/sequences/0391d11d-61c9-4b2c-8784-26bc65c54981" target="_blank" rel="noopener noreferrer" class="prospect-review-name">Jim Butz — Follow-up Sequence (2026-06-21)</a><span class="prospect-review-meta">drafted 4d ago</span></div><div class="prospect-review-desc">Gemma and Jim connected through Robert's Passion Millionaire Network, both recruited by Joy after initially declining multiple times. Jim ru</div></div>
 <div class="prospect-review-item"><div class="prospect-review-main"><a href="https://mailer.gemmaserenity.com/sequences/eda3bb35-421b-447c-9084-7c11e53fc9e7" target="_blank" rel="noopener noreferrer" class="prospect-review-name">Marco Joubert — Follow-up Sequence (2026-06-21)</a><span class="prospect-review-meta">drafted 3d ago</span></div><div class="prospect-review-desc">Marco reached out to explore a sales partnership after a previous attempt to collaborate through a third-party company (Black Sky) fell thro</div></div>
 <div class="prospect-review-item"><div class="prospect-review-main"><a href="https://mailer.gemmaserenity.com/sequences/edcb6c31-78cc-463b-86f0-060f3e54d92b" target="_blank" rel="noopener noreferrer" class="prospect-review-name">Deborah Dubree — Follow-up Sequence (2026-06-21)</a><span class="prospect-review-meta">drafted 3d ago</span></div><div class="prospect-review-desc">Gemma and Deborah had a candid, supportive call focused on Gemma's current financial urgency and immediate revenue strategy. Deborah strongl</div></div>
 <div class="prospect-review-item"><div class="prospect-review-main"><a href="https://mailer.gemmaserenity.com/sequences/6d6cba73-0ddf-49a3-986d-396711cb2506" target="_blank" rel="noopener noreferrer" class="prospect-review-name">Kimberly Bunker — Follow-up Sequence (2026-06-21)</a><span class="prospect-review-meta">drafted 3d ago</span></div><div class="prospect-review-desc">Gemma and Kimberly had a deeply authentic first connection, sharing personal stories of resilience, domestic violence survival, and professi</div></div>
@@ -821,7 +828,7 @@ header {
       <span class="card-title">💧 Body Check</span>
       <span class="card-badge">Non-Negotiable</span>
     </div>
-    <p class="card-body">Water and meds, love — it's nearly 6 PM and a long build day deserves proper fueling. Drink a full glass right now before you go back to the screen. 💧</p>
+    <p class="card-body">Evening water check — have you had a full glass in the last hour? Meds if they're on your evening schedule. You've been heads-down; your body kept up with you today. 💙</p>
   </div>
 
   
@@ -830,7 +837,7 @@ header {
           <span class="card-title">💡 New Idea — Parked</span>
           <span class="card-badge">Vision Filter</span>
         </div>
-        <p class="card-body">Supabase master reference flags a full in-house accounting system to replace QuickBooks (Gemma's tax accounting background makes this viable) — parked for Vision Filter scoring.</p>
+        <p class="card-body">Household financial tracking and potential full accounting system in Supabase (on the WinWin account) — spotted in the master reference. Parking for Vision Filter scoring before scheduling.</p>
       </div>
 
   <!-- Encouragement -->
@@ -838,7 +845,7 @@ header {
     <div class="card-header" style="justify-content:center">
       <span class="card-title">✦ You've Got This</span>
     </div>
-    <p class="card-body-large">"You went from zero Rust knowledge to a compiled, installed, taskbar-pinned desktop app in one session — that is genuinely impressive and it is yours, fully owned, no subscriptions, no platform risk."</p>
+    <p class="card-body-large">"You built and shipped a full desktop app from scratch in one night — Sovereign OS is real, it's running, and it's yours. That's not a small thing."</p>
   </div>
 
   <!-- From Your Notes -->
@@ -859,7 +866,7 @@ C:
 cd c:\scripts
 python run_daily_brief_with_whatsapp.py
 
-Or maybe, if that's hard to ask, have an hourly update but then the update doesnt update since last update but in the last 14 days, so that I don't lose track of what was done last week.</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="note-task-58232e1263" onchange="saveCheck(this)"><span class="task-text">In the Passion Millionaire Connect card, keep track of the checkmarked people immediately.</span></label></li></ul>
+Or maybe, if that's hard to ask, have an hourly update but then the update doesnt update since last update but in the last 14 days, so that I don't lose track of what was done last week.</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="note-task-58232e1263" onchange="saveCheck(this)"><span class="task-text">In the Passion Millionaire Connect card, keep track of the checkmarked people immediately.</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="note-task-9ee26fb3b5" onchange="saveCheck(this)"><span class="task-text">in WhatsApp, commit to memory that the group Love Happy Fulfilled (with emojis) is Sascha and Gemma talking. So "the partner" is actually Sascha. Adjust the language of your feedback for WhatsApp briefing accordingly.</span></label></li></ul>
   </div>
 
   <!-- Belief to Break Through -->
@@ -868,8 +875,7 @@ Or maybe, if that's hard to ask, have an hourly update but then the update doesn
       <span class="card-title">💛 Belief to Break Through</span>
       <span class="card-badge">Just between us</span>
     </div>
-    <div class="belief-item"><p class="belief-text">"Limiting belief to break through: 
-THEY have to feel it's the right investment for them, they have to pull the trigger to pay me, they have to decide to pay me, they have to make up their mind, they have to have the means to pay me... all of it is a monstrous limiting belief that I must switch around immediately so thar I'm not depending on their mood disorders to play in my favor but I SET the rules of the game with my certainty that is so strong that everybody is my client and pays me thousands of US dollars every day with gratitude, feeling that they get so much more value than what they are paying me for."</p><label class="task-label"><input type="checkbox" class="task-check-input" id="note-belief-1fb53fe095" onchange="saveCheck(this)"><span class="task-text">I've moved through this 💛</span></label></div>
+    <p class='card-body' style='color:#666;font-style:italic'>Nothing here right now — this card only fills in if something you write reads like a limiting belief, so you can come back and move through it.</p>
   </div>
 
   <!-- Log what you did -->
@@ -884,7 +890,7 @@ THEY have to feel it's the right investment for them, they have to pull the trig
     <div class="log-status" id="log-status"></div>
   </div>
 
-  <div class="footer">Generated 2026-06-25 17:56 · scanning since Jun 25 · 05:01 PM · focus.gemmaserenity.com</div>
+  <div class="footer">Generated 2026-06-25 18:25 · scanning since Jun 25 · 05:56 PM · focus.gemmaserenity.com</div>
 
 </div>
 
