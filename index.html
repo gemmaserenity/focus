@@ -39,6 +39,7 @@
   --c-notes:    #E6FBF8;   --a-notes:    #14B8A6;
   --c-belief:   #FBF0FA;   --a-belief:   #C084CC;
   --c-prospect-review: #EEF2FF; --a-prospect-review: #6366F1;
+  --c-status:          #F0FDF4; --a-status:          #16A34A;
 
   --radius: 14px;
   --gap:    16px;
@@ -260,6 +261,10 @@ header {
 .card-prospect-review { background: var(--c-prospect-review); border-color: var(--a-prospect-review); }
 .card-prospect-review .card-title { color: #4338ca; }
 .card-prospect-review .card-badge { background: rgba(99,102,241,0.18); color: #4338ca; }
+
+.card-status    { background: var(--c-status);    border-color: var(--a-status); }
+.card-status    .card-title { color: #15803d; }
+.card-status    .card-badge { background: rgba(22,163,74,0.15); color: #15803d; }
 
 /* ── Prospect sequences awaiting review ── */
 .prospect-review-item {
@@ -578,8 +583,8 @@ header {
   <div class="header-title">⚡ Focus</div>
   <div class="header-meta">
     <span class="pulse-dot"></span>
-    <span>2026-06-29 09:17</span>
-    <span class="header-label">morning</span>
+    <span>2026-06-29 11:03</span>
+    <span class="header-label">midday</span>
   </div>
 </header>
 
@@ -587,9 +592,9 @@ header {
 
   <!-- Greeting -->
   <div class="greeting-band">
-    <div class="greeting-time">Monday, June 29 · 09:17 AM</div>
-    <div class="greeting-text">Good morning, Gemma! Monday energy — let's make it count. ☀️</div>
-    <span class="activity-pill">🔍 Mailer engine had 7 files touched as late as 11:39 PM Sunday — that build is actively progressing and needs no nudge today.</span>
+    <div class="greeting-time">Monday, June 29 · 11:03 AM</div>
+    <div class="greeting-text">Hey Gemma — happy Monday! You've got a packed 48 hours ahead and the machine is humming. Let's make it count.</div>
+    <span class="activity-pill">🔍 Active file movement across Scripts, mailer-engine, and focus folders — mailer engine build and outreach pipeline work are clearly in progress and being handled.</span>
   </div>
 
   <!-- Where you left off -->
@@ -598,7 +603,7 @@ header {
       <span class="card-title">📍 Where You Left Off</span>
       <span class="card-badge">Context</span>
     </div>
-    <p class="card-body">You wrapped up the WinWin Supabase key fix early this morning (done ✅ at 6:14 AM — nice). The mailer engine had heavy activity late last night through 11:39 PM, so that build is clearly in motion. Scripts folder was also touched this morning, so the pipeline work is live and rolling.</p>
+    <p class="card-body">This morning you knocked out the WinWin Supabase key fix (SUPABASE_KEY_WINWIN added to the keepalive worker — done ✅). The mailer engine had heavy activity last night through 11:39 PM, so that build is actively in motion. Scripts folder was touched as recently as 10:53 AM today.</p>
   </div>
 
   <!-- Focus NOW -->
@@ -607,8 +612,8 @@ header {
       <span class="card-title">⚡ Focus Right Now</span>
       <span class="card-badge">💰 Money In Bank</span>
     </div>
-    <p class="card-body-large">Your two prospect calls are TOMORROW — Brian Talbott at 4 PM and Meghan Thomas at 11 AM. The refined proposal from Saturday's session was flagged as ready for Monday. Get that in front of the right person before noon today.</p>
-    <ul class="task-list"><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk0" onchange="saveCheck(this)"><span class="task-text">Review and send the refined proposal — it was ready as of Saturday, today is the day</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk1" onchange="saveCheck(this)"><span class="task-text">Decide which prospect leads tomorrow: Meghan (11 AM) or Brian (4 PM) — prep a sharp one-liner for each so you walk in confident</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk2" onchange="saveCheck(this)"><span class="task-text">TMQ membership area: Supabase wiring is still unfinished — flag a 30-min window this week to scope what's left so it doesn't stall longer</span></label></li></ul>
+    <p class="card-body-large">You have the Seamless.ai demo at 3:00 PM today — go in knowing exactly what you need it to do for the PRS LinkedIn outreach pipeline so you can make a fast yes/no call.</p>
+    <ul class="task-list"><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk0" onchange="saveCheck(this)"><span class="task-text">11:45 AM — Tina Dexter call with Sascha (in ~45 min — be ready)</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk1" onchange="saveCheck(this)"><span class="task-text">3:00 PM — Seamless.ai demo: evaluate fit for PRS lead gen pipeline, decide yes/no on the spot</span></label></li><li><label class="task-label"><input type="checkbox" class="task-check-input" id="chk2" onchange="saveCheck(this)"><span class="task-text">TMQ course membership area — wiring still incomplete; carve out time this week to push it forward (this is a direct revenue asset)</span></label></li></ul>
   </div>
 
   <!-- WhatsApp -->
@@ -725,8 +730,10 @@ header {
       <span class="card-badge">Upcoming</span>
     </div>
     <p class="card-body" style="white-space:pre-wrap">  • Mon Jun 29 · 11:45 AM — Tina Dexter with Sascha
+  • Mon Jun 29 · 3:00 PM — seamless.ai demo (account gemma@prs.gemmaserenity.com)
   • Tue Jun 30 · 11:00 AM — networking call Gemma Serenity and Meghan Thomas
-  • Tue Jun 30 · 4:00 PM — networking call Gemma Serenity and Brian Talbott</p>
+  • Tue Jun 30 · 4:00 PM — networking call Gemma Serenity and Brian Talbott
+  • Wed Jul 1 · 10:30 AM — networking call Gemma Serenity and Mark Young</p>
   </div>
 
   <!-- Prospects -->
@@ -735,7 +742,7 @@ header {
       <span class="card-title">🤝 Prospects Pipeline</span>
       <span class="card-badge">Revenue</span>
     </div>
-    <p class="card-body" style="margin-bottom:10px;font-style:italic">Lead with Meghan Thomas tomorrow — she's first on the clock and strategy-aligned; sharp prep tonight pays off at 11 AM.</p>
+    <p class="card-body" style="margin-bottom:10px;font-style:italic">Lead with Meghan Thomas tomorrow — iridescent strategy signals consulting/agency overlap, which maps cleanly to what PRS offers.</p>
     
         <div class="prospect-item">
           <div class="prospect-header">
@@ -811,7 +818,7 @@ header {
       <span class="card-title">💧 Body Check</span>
       <span class="card-badge">Non-Negotiable</span>
     </div>
-    <p class="card-body">Water first, meds next — you were up early and working hard. Take 2 minutes right now before the morning runs away from you. 💙</p>
+    <p class="card-body">Water first — big call in 45 minutes. Meds if you haven't taken them yet. You need to be sharp for back-to-back calls today. 💙</p>
   </div>
 
   
@@ -820,7 +827,7 @@ header {
           <span class="card-title">💡 New Idea — Parked</span>
           <span class="card-badge">Vision Filter</span>
         </div>
-        <p class="card-body">Full in-house accounting system on the WinWin/gemser111 Supabase account (Gemma's tax accountant background makes this very doable — flagged for Vision Filter scoring before scheduling).</p>
+        <p class="card-body">Full in-house Supabase accounting system (gemser111 account) flagged in the Supabase reference — Gemma's tax accounting background makes this very doable. Parked for Vision Filter.</p>
       </div>
 
   <!-- Encouragement -->
@@ -828,7 +835,7 @@ header {
     <div class="card-header" style="justify-content:center">
       <span class="card-title">✦ You've Got This</span>
     </div>
-    <p class="card-body-large">"You built a live multi-agent lead gen engine in one Saturday session and already have real emails out and calls on the calendar — this machine is working because YOU built it."</p>
+    <p class="card-body-large">"You shipped a live multi-agent lead gen engine on Saturday AND fixed infrastructure this morning before noon — the pace you're building at is genuinely impressive."</p>
   </div>
 
   <!-- From Your Notes -->
@@ -878,6 +885,17 @@ What is it? Look into it.</span></label></li></ul>
     <p class='card-body' style='color:#666;font-style:italic'>Nothing here right now — this card only fills in if something you write reads like a limiting belief, so you can come back and move through it.</p>
   </div>
 
+  <!-- 14-Day Status Report -->
+  <div class="card card-status">
+    <div class="card-header">
+      <span class="card-title">📊 Last 14 Days</span>
+      <span class="card-badge">What moved</span>
+    </div>
+    <p class="card-body" style="margin-bottom:14px;font-style:italic;color:#374151">Solid infrastructure week with key tools wired up and TikTok content shipped, but a growing backlog of unconfirmed feature requests and open prospect admin threads needs clearing.</p>
+<div style="margin-bottom:16px"><div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:#15803d;margin-bottom:8px">Achieved</div><ul style="list-style:none;padding:0;margin:0;font-size:15px;line-height:1.6"><li style="margin-bottom:5px;padding-left:18px;position:relative"><span style="position:absolute;left:0;color:#16A34A;font-weight:700">✓</span>Claude cowork given a new daily scheduled task (update ecosystems) fully gated behind zero-trust Cloudflare magic link</li><li style="margin-bottom:5px;padding-left:18px;position:relative"><span style="position:absolute;left:0;color:#16A34A;font-weight:700">✓</span>Claude cowork and mailer engine favicons/icons fully wired in</li><li style="margin-bottom:5px;padding-left:18px;position:relative"><span style="position:absolute;left:0;color:#16A34A;font-weight:700">✓</span>WhatsApp card fully wired into the Focus daily brief</li><li style="margin-bottom:5px;padding-left:18px;position:relative"><span style="position:absolute;left:0;color:#16A34A;font-weight:700">✓</span>Medication list logged for daily health check-in calibration (morning/evening regimens including Concerta, Gemtesa, allergy meds, acid reflux)</li><li style="margin-bottom:5px;padding-left:18px;position:relative"><span style="position:absolute;left:0;color:#16A34A;font-weight:700">✓</span>5 TikTok posts for The Manifesting Queen @gemmaserenity recorded and scheduled based on M365 content plan (June theme: visualization)</li><li style="margin-bottom:5px;padding-left:18px;position:relative"><span style="position:absolute;left:0;color:#16A34A;font-weight:700">✓</span>Charlie Sells pre-call brief reviewed (confirmed twice in done log)</li><li style="margin-bottom:5px;padding-left:18px;position:relative"><span style="position:absolute;left:0;color:#16A34A;font-weight:700">✓</span>Eric Twohey call flagged for notes logging and prospect automation transcript pickup</li><li style="margin-bottom:5px;padding-left:18px;position:relative"><span style="position:absolute;left:0;color:#16A34A;font-weight:700">✓</span>Podcast removed from first card of daily briefing app; podcast folder removed from daily briefing folder crawl</li></ul></div>
+<div><div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:#ea580c;margin-bottom:8px">Still in Play</div><ul style="list-style:none;padding:0;margin:0;font-size:15px;line-height:1.6"><li style="margin-bottom:5px;padding-left:18px;position:relative"><span style="position:absolute;left:0;color:#F97316;font-weight:700">›</span>Quick-export/clipboard button for daily briefing text (WhatsApp, email, LinkedIn, Facebook Messenger, local note) — requested, not confirmed built</li><li style="margin-bottom:5px;padding-left:18px;position:relative"><span style="position:absolute;left:0;color:#F97316;font-weight:700">›</span>Mobile-triggered refresh button for Focus PWA (or hourly auto-update with 14-day rolling window) — requested, not confirmed built</li><li style="margin-bottom:5px;padding-left:18px;position:relative"><span style="position:absolute;left:0;color:#F97316;font-weight:700">›</span>Suzanne Alexandra appointment rescheduled off June 26 — prospect folder update not confirmed done</li><li style="margin-bottom:5px;padding-left:18px;position:relative"><span style="position:absolute;left:0;color:#F97316;font-weight:700">›</span>WhatsApp briefing language adjustment needed: Love Happy Fulfilled group = Gemma + Sascha; 'partner' = Sascha — not confirmed applied</li><li style="margin-bottom:5px;padding-left:18px;position:relative"><span style="position:absolute;left:0;color:#F97316;font-weight:700">›</span>Passion Millionaire Connect card: checkmarked people tracking to be implemented — not confirmed done</li><li style="margin-bottom:5px;padding-left:18px;position:relative"><span style="position:absolute;left:0;color:#F97316;font-weight:700">›</span>Limiting belief work (sales certainty reframe, high-ticket client identity) — flagged for ongoing reinforcement, not resolved</li><li style="margin-bottom:5px;padding-left:18px;position:relative"><span style="position:absolute;left:0;color:#F97316;font-weight:700">›</span>Bigger vision tab + The Manifesting Queen / TikTok LIVE / English+French accounts / online course portal progress tracking — requested, not confirmed built</li><li style="margin-bottom:5px;padding-left:18px;position:relative"><span style="position:absolute;left:0;color:#F97316;font-weight:700">›</span>gemmaserenity.com/gemma-ai-services page gaps for VC/investor positioning — flagged, outcome not logged</li></ul></div>
+  </div>
+
   <!-- Log what you did -->
   <div class="card card-log">
     <div class="card-header">
@@ -890,7 +908,7 @@ What is it? Look into it.</span></label></li></ul>
     <div class="log-status" id="log-status"></div>
   </div>
 
-  <div class="footer">Generated 2026-06-29 09:17 · scanning since Jun 28 · 05:01 PM · focus.gemmaserenity.com</div>
+  <div class="footer">Generated 2026-06-29 11:03 · scanning since Jun 28 · 05:01 PM · focus.gemmaserenity.com</div>
 
 </div>
 
@@ -926,6 +944,12 @@ document.querySelectorAll('.task-check-input').forEach(function(input) {
 });
 
 // ── Log submission ──
+function savePending(text) {
+  const pending = JSON.parse(localStorage.getItem('pending-logs') || '[]');
+  pending.push({ text, timestamp: new Date().toISOString() });
+  localStorage.setItem('pending-logs', JSON.stringify(pending));
+}
+
 async function submitLog() {
   const input  = document.getElementById('log-input');
   const btn    = document.getElementById('log-btn');
@@ -936,6 +960,10 @@ async function submitLog() {
   btn.disabled = true;
   status.textContent = 'Saving...';
 
+  // Remove any previous AI panel
+  const oldPanel = document.getElementById('ai-task-panel');
+  if (oldPanel) oldPanel.remove();
+
   try {
     const resp = await fetch(WORKER + '/log', {
       method: 'POST',
@@ -943,26 +971,85 @@ async function submitLog() {
       body: JSON.stringify({
         text:            text,
         timestamp:       new Date().toISOString(),
-        briefing_label:  'morning'
+        briefing_label:  'midday'
       })
     });
     if (resp.ok) {
+      const data = await resp.json();
       status.textContent = '✦ Saved — next briefing will reflect this.';
       input.value = '';
+      // If the Worker classified this as an AI-doable task, offer to act on it now
+      if (data.ai_doable && data.ai_summary) {
+        showAiTaskPanel(text, data.ai_summary);
+      }
     } else {
       status.textContent = 'Could not reach Worker. Saved locally instead.';
-      // Fallback — save to localStorage so it's not lost
-      const pending = JSON.parse(localStorage.getItem('pending-logs') || '[]');
-      pending.push({ text, timestamp: new Date().toISOString() });
-      localStorage.setItem('pending-logs', JSON.stringify(pending));
+      savePending(text);
     }
   } catch(e) {
     status.textContent = 'Offline — saved locally, will sync next time.';
-    const pending = JSON.parse(localStorage.getItem('pending-logs') || '[]');
-    pending.push({ text, timestamp: new Date().toISOString() });
-    localStorage.setItem('pending-logs', JSON.stringify(pending));
+    savePending(text);
   }
   btn.disabled = false;
+}
+
+// ── AI task confirmation panel ──
+function showAiTaskPanel(originalText, aiSummary) {
+  const card = document.querySelector('.card-log');
+  const panel = document.createElement('div');
+  panel.id = 'ai-task-panel';
+  panel.style.cssText = 'margin-top:12px;padding:14px 16px;background:rgba(139,92,246,0.08);border-radius:10px;border-left:4px solid #8B5CF6';
+
+  const lbl = document.createElement('div');
+  lbl.style.cssText = 'font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.7px;color:#6D28D9;margin-bottom:8px';
+  lbl.textContent = '⚡ I can handle this';
+
+  const summary = document.createElement('p');
+  summary.style.cssText = 'font-size:15px;color:#1A1A1A;margin-bottom:12px;line-height:1.5';
+  summary.textContent = aiSummary;
+
+  const yesBtn = document.createElement('button');
+  yesBtn.textContent = 'Yes, do it →';
+  yesBtn.style.cssText = 'padding:10px 18px;background:#6D28D9;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;margin-right:8px';
+  yesBtn.onclick = function() { queueAiTask(originalText, aiSummary, panel); };
+
+  const noBtn = document.createElement('button');
+  noBtn.textContent = 'No thanks';
+  noBtn.style.cssText = 'padding:10px 18px;background:rgba(0,0,0,0.06);color:#555;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer';
+  noBtn.onclick = function() { panel.remove(); };
+
+  panel.appendChild(lbl);
+  panel.appendChild(summary);
+  panel.appendChild(yesBtn);
+  panel.appendChild(noBtn);
+  card.appendChild(panel);
+}
+
+async function queueAiTask(text, aiSummary, panel) {
+  panel.innerHTML = '<p style="font-size:14px;color:#6D28D9;font-weight:600">Working on it...</p>';
+  try {
+    const resp = await fetch(WORKER + '/ai-queue', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ text: text, ai_summary: aiSummary })
+    });
+    panel.innerHTML = '';
+    if (resp.ok) {
+      const data = await resp.json();
+      const done = document.createElement('div');
+      done.style.cssText = 'font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.7px;color:#6D28D9;margin-bottom:10px';
+      done.textContent = '✦ Done — saved to your session notes';
+      const result = document.createElement('div');
+      result.style.cssText = 'font-size:14px;color:#1A1A1A;line-height:1.6;white-space:pre-wrap;background:rgba(255,255,255,0.7);border-radius:8px;padding:12px 14px;max-height:300px;overflow-y:auto';
+      result.textContent = data.result || '(no result returned)';
+      panel.appendChild(done);
+      panel.appendChild(result);
+    } else {
+      panel.innerHTML = '<p style="font-size:14px;color:#DC2626;font-weight:600">Something went wrong — try again.</p>';
+    }
+  } catch(e) {
+    panel.innerHTML = '<p style="font-size:14px;color:#DC2626;font-weight:600">Offline — could not reach Worker.</p>';
+  }
 }
 
 // ── Retry any locally saved pending logs on load ──
