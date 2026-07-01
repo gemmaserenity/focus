@@ -84,5 +84,5 @@ yes networking-call-product
 yes focus
 yes daily-briefing
 
-E:\Everything>
+E:\>
 
