@@ -1,4 +1,4 @@
-e:\
+e:
 cd "E:\Everything\focus"
 git add .
 git commit -m "favicon update"
